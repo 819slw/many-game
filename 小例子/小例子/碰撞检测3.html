@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#div1{
+		width: 150px;
+		height: 150px;
+		background: red;
+		position: absolute;
+	}
+	#div2{
+		width: 150px;
+		height: 150px;
+		background: red;
+		position: absolute;
+		left: 300px;
+		top: 200px;
+	}
+</style>
+<script>
+	function testDrag(obj1,obj2){
+		// 获取两个div的四条边距离上和左的距离
+		var L1 = obj1.offsetLeft;
+		var R1 = obj1.offsetLeft+obj1.offsetWidth;
+		var T1 = obj1.offsetTop;
+		var B1 = obj1.offsetTop+obj1.offsetHeight;
+
+		var L2 = obj2.offsetLeft;
+		var R2 = obj2.offsetLeft+obj2.offsetWidth;
+		var T2 = obj2.offsetTop;
+		var B2 = obj2.offsetTop+obj2.offsetHeight;
+
+		if(B1>T2&&R1>L2&&L1<R2&&T1<B2){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	function darg(obj1,obj2){
+		obj1.onmousedown = function(ev){
+			obj1.style.background = 'red';
+			var oEvent = ev || event;
+			var disX = oEvent.clientX - obj1.offsetLeft;
+			var disY = oEvent.clientY - obj1.offsetTop;
+			document.onmousemove = function(ev){
+				var oEvent = ev || event;
+				var l = oEvent.clientX - disX;
+				var t = oEvent.clientY - disY;
+				obj1.style.left = l + 'px';
+				obj1.style.top = t + 'px';
+				
+				if(testDrag(obj1,obj2)){
+					obj2.style.background = 'green';
+				}else{
+					obj2.style.background = 'red';
+				}
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+				obj1.releaseCapture && obj1.releaseCapture();
+			}
+			obj1.setCapture && obj1.setCapture();
+			return false;
+		}
+	}
+	window.onload = function(){
+		var oDiv1 = document.getElementById('div1');
+		var oDiv2 = document.getElementById('div2');
+		darg(oDiv1,oDiv2);
+		darg(oDiv2,oDiv1);
+	}
+</script>
+</head>
+
+<body>
+	<div id="div1"></div>
+	<div id="div2"></div>
+</body>
+</html>

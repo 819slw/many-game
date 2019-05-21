@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	ul{
+		width: 286px;
+		margin:10px auto;
+	}
+	li{
+		float: left;
+		width: 26px;
+		height: 26px;
+		background: url(star.gif);
+	}
+	.on{
+		background-position: 0px -29px;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var aLi = document.getElementsByTagName('li');
+		for(var i = 0; i < aLi.length; i++){
+			aLi[i].index = i;
+			aLi[i].onmouseover = function(){
+				for(var j = 0; j < aLi.length; j++){
+					if((j <= this.index && j >=5) || (j >= this.index && j <= 5)){
+						aLi[j].className = 'on';
+					}else{
+						aLi[j].className = '';
+					}
+				}
+			}
+			aLi[i].onclick = function(){
+				alert(this.index-5)
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li class="on"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

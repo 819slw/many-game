@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+</style>
+<script>
+window.onload=function(){
+	var oBtn=document.getElementById('btn1');
+	
+	var time=5;
+	var s=time+1;
+	var timer=null;
+	
+	oBtn.onclick=function(){
+		function countDown(){
+			s--;
+			oBtn.value='('+s+')正在发送...';
+			oBtn.disabled=true;
+			
+			if(s==0){
+				clearInterval(timer);
+				oBtn.value='重新发送';
+				oBtn.disabled=false;
+				s=time+1;	
+			}
+		}
+		countDown();
+		timer=setInterval(countDown,1000);
+	};
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="发送短信" id="btn1">
+</body>
+</html>

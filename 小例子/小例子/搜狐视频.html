@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<style>
+		*{margin: 0; padding: 0;}
+		li{list-style: none;}
+		i,em{font-style:normal;}
+		.clear{ clear:both;}
+		.clearfix:after{ content:""; display:block; clear:both;}
+		.box{width: 268px; background: #dee7e7;}
+		.box ul li{width: 255px; border-bottom: 1px dashed #fff; margin: 0 auto; overflow: hidden; padding: 10px 0;}
+		.box ul li span{float: left; width: 17px; height: 13px; background: #185a84; font-size: 12px; color: #fff; text-align: center; margin-top: 3px;} 
+		.box ul li i{float: right;}
+		.box ul li .nr{display: none;}
+		.box ul li.on{height: 60px; background: #fff; border:none; border-top: 1px solid #94bdd6;}
+		.box ul li.on .nt{display: none;}
+		.box ul li.on i{float: right; display: none;}
+		.box ul li.on .nr{width: 220px; float: right; display: block;}
+		.box ul li.on .nr .img{padding: 2px; border: 1px solid #dee7e7; float: left;}
+		.box ul li.on .nr .txt{float: right; width: 130px; }
+		.box ul li.on .nr .txt a{color: #185273; font-size: 12px; text-decoration: none;}
+		input.on{background: red; color: #fff;}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBox=document.getElementById('box');
+			var aLi=oBox.getElementsByTagName('li');
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].onmouseover=function(){
+					for (var i = 0; i < aLi.length; i++) {
+						aLi[i].className='';
+					}
+					this.className='on';
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="每日">
+	<input type="button" name="" value="每周">
+	<input type="button" name="" value="全部">
+	<div id="box" class="box">
+		<ul>
+			<li class="on">
+				<span>1</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>2</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>3</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>4</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>5</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>6</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>7</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>8</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>9</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<span>10</span>
+				<i>关于地球和人类的一千零一问</i>
+				<div class="nr clearfix">
+					<div class="img">
+						<a href=""><img src="img/jishi.png" alt=""></a>
+					</div>
+					<div class="txt">
+						<a href="" title="">实在是累了</a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Just a Story</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="./1.css">
+	<script src="./js/jquery-1.8.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<header id="top_1" class="row-fluid">
+		<audio autoloop loop controls autoplay>
+			<source src="mp3/逃跑计划 - 夜空中最亮的星.mp3">
+			<source src="mp3/逃跑计划 - 夜空中最亮的星.mp3.wav">
+			<object type="audio/x-wav" data="mp3/逃跑计划 - 夜空中最亮的星.mp3" width="290" height="45">
+				<param name="src" value="mp3/逃跑计划 - 夜空中最亮的星.mp3">
+				<param name="autoplay" value="false">
+				<param name="autoStart" value="0">
+				<p><a href="mp3/逃跑计划 - 夜空中最亮的星.mp3">夜空中最亮的星</a></p>
+			</object>
+		</audio>
+	</header>
+	<div class="openshow row-fluid" style="width:100%;">
+		<img src="./img/background1.jpg" alt="" style="width:100%; height:100%;">
+		<div class="openword" style="width:80%; height:100%;">
+			<p>这是一个没有剑与魔法的世界</p>
+			<p>发生在这里的</p>
+			<p>也仅仅是一个</p>
+			<p>普通人的</p>
+			<p>关于远方的</p>
+			<p>平凡的故事而已</p>
+			<p>Just a Normal Story</p>
+			<br><br>
+			<h2>点击页面,开启一段平凡的路途...</h2>
+		</div>
+	</div>
+
+	<div class="content row-fluid">
+		<div class="message">
+			<!-- <div class="mes_bg"></div> -->
+			<ul>
+				<li class="isay">
+				作者说
+					<div class="int">
+						<p>项目不知道怎么做啊,<br>
+						不想做电商视频网站,<br>
+						又没找到个人比较喜欢的简洁风网站<br>
+						嗨呀,好气啊<br>
+						于是只能凭借自己的想象力写了这么一个网页<br>
+						布局简单,以JS为主</p>
+					</div>
+				</li>
+				<li class="timer">本故事已经成功浪费了你<span></span>分<span></span>秒的人生</li>
+			</ul>
+		</div>
+
+		<div class="storypage page0 row-fluid" style="width:100%; height:100%;">
+			<img src="./img/background2.jpg" alt="" style="width:100%; height:100%;">
+			<p class="btn_jump">点击继续</p>
+			<div class="word0">
+				<li><p>故事总要有主人公</p></li>
+				<li><p>我们的主人公叫小明</p></li>
+				<li><p>恩,就是这么随便的名字</p></li>
+				<li><p>他厌倦了日复一日了然无趣的生活</p></li>
+				<li><p>于是背起了行囊</p></li>
+				<li><p>开始寻找,属于他的诗与远方...</p></li>
+				<img src="./img/pen.png" alt="">
+			</div>
+		</div>
+
+		<div class="storypage page1 row-fluid" style="width:100%; height:100%;">
+			<img src="./img/background3.jpg" alt="" style="width:100%;">
+			<p class="btn_left">点击继续</p>
+			<p class="word1">所谓江湖,<br>
+				就是手里的酒,和脚下的路。<br>
+				要习哪里的风土,<br>
+				要入何种的江湖,<br>
+				拿起放大镜和地图,<br>
+				帮小明参谋参谋。
+			</p>
+			
+			<div class="glass_all">
+				<div class="small">
+					<img src="./img/map.jpg" alt="">
+				</div>
+				<div class="big">
+					<img src="./img/map.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div class="storypage page2 row-fluid" style="width:100%; height:100%;">
+			<img src="./img/background4.jpg" alt="">
+			<p class="btn_down">点击继续</p>
+			<div class="word2">
+				<p>
+					千里之行,始于足下<br>
+					在踏出第一步之前<br>
+					去一下附近的便利店吧<br>
+					这一走不知何时回来<br>
+					也顺便买些东西<br>
+					以备路上不时之需<br>
+				</p>
+			</div>
+			<table>
+				<tr class="tab_tit">
+					<th></th>
+					<th>商品</th>
+					<th>价格</th>
+					<th>数量</th>
+					<th>小计</th>
+					<th></th>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>水</td>
+					<td class="price">2</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>牛奶</td>
+					<td class="price">4</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>面包</td>
+					<td class="price">5</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>柑橘</td>
+					<td class="price">6</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>绳子</td>
+					<td class="price">15</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>电池</td>
+					<td class="price">2</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>手电</td>
+					<td class="price">20</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr class="goods">
+					<td class="plus">+</td>
+					<td>杯子</td>
+					<td class="price">30</td>
+					<td>0</td>
+					<td>0</td>
+					<td class="minus">-</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>总价</td>
+					<td colspan="3"><span>0</span></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<th colspan="4" class="buy">选好了,去付款</th>
+					<td></td>
+				</tr>
+			</table>
+
+			<p class="buyed">成功花费<span></span>元,购买所需物品</p>
+		</div>
+	</div>
+
+	 
+	 <div class="storypage page3 row-fluid" style="width:100%; height:100%;">
+		<img src="./img/background5.jpg" alt="">
+		<ul>
+			<li>一切都准备好了</li>
+			<li>锁好了房门</li>
+			<li>整理好了行李</li>
+			<li>没有需要寄存的宠物</li>
+			<li>没有需要通知的亲戚</li>
+			<li>昨天的工作?管他呢</li>
+			<li>今天的股票?谁在意</li>
+			<li>他从没像如今般惬意</li>
+			<li>也从没像此刻一样充满希冀</li>
+			<li>这一秒</li>
+			<br>
+			<li>就出发!</li>
+		</ul>
+		<p class="btn_go">点击出发!</p>
+	 </div>
+		
+
+	<div class="storypage page4 row-fluid" >
+		<div class="showp1" style="width:80%; height:100%;">
+			<img src="./img/background6.jpg" alt="" style="width:200%; height:100%;">
+			<img src="./img/background7.jpg" alt=""style="width:200%; height:100%;">
+			<img src="./img/background8.jpg" alt=""style="width:200%; height:100%;">
+		</div>
+		<div class="showw1" style="width:20%; height:100%;">
+			<p>走过山</p>
+			<p>走过大海</p>
+			<p>走过人山人海</p>
+		</div>
+
+		<div class="showp2" style="width:80%; height:100%;">
+			<img src="./img/background9.jpg" alt=""style="width:200%; height:200%;">
+			<img src="./img/background10.jpg" alt=""style="width:200%; height:200%;">
+			<img src="./img/background11.jpg" alt=""style="width:200%; height:200%;">
+		</div>
+		<div class="showw2"style="width:20%; height:100%;">
+			<p>穿过丛林</p>
+			<p>走过叶落</p>
+			<p>醉于潮起潮落</p>
+		</div>
+		<div class="show3">
+			<p>一路前行</p>
+			<p>不需要人陪伴</p>
+			<p>如果人生都如此般乐</p>
+			<p>可否称作天堂?</p>
+		</div>
+			<p class="btn_go1">点击继续</p>
+
+	</div>
+
+	<div class="storypage page5 row-fluid">
+		<img src="./img/background12.jpg" alt="">
+		<div class="cont1">
+			<p>这一路走来<br>
+			个中滋味<br>
+			只有自己清楚<br>
+			虽不是一帆风顺<br>
+			缺也乐此不疲<br>
+			</p>
+		</div>
+		<div class="cont2">
+			<p>原本小明以为<br>
+			他还会这样继续走下去<br>
+			缺没有料想到<br>
+			一个人的出现<br>
+			打破了他关于旅行下半段的<br>
+			所有设想...</p>
+		</div>		
+		<p class="btn_end">点击继续</p>
+	</div>
+
+
+	<div class="storypage page_end row-fluid">
+		<p style="font-size: 28px;">未完待续...</p>
+		<div style="width:50%; left:48%;">
+			<ul>
+				<li style="font-size:26px;">HTML5,Jquery</li>
+				<li>Mr.Zheng</li>
+				<li>私人项目</li>
+				<br>
+				<li>主演:</li>
+				<li>小明</li>
+				<li>特别出演:</li>
+				<li>无</li>
+				<li>编剧:</li>
+				<li>无</li>
+				<li>后期:</li>
+				<li>无</li>
+				<li>摄影:</li>
+				<li>我的壁纸库T^T</li>
+				<li>导演:</li>
+				<li>Mr.Zheng</li>
+				<br>
+				<br>
+				<li>感谢观看</li>
+				<li>Thanks for Watching</li>
+		</ul>
+		</div>
+		
+	</div>
+
+</div>
+	<script>
+
+	$(function(){
+		$('div.openshow,div.storypage,div.storypage>img').css('width',$(window).width());	
+		$('div.openshow,div.storypage,div.storypage>img').css('height',$(window).height());
+//		console.log($(window).width());
+//		console.log($(window).height());
+	})
+	$(window).resize(function(){
+		$('div.openshow,div.storypage,div.storypage>img').css('width',$(window).width());	
+		$('div.openshow,div.storypage,div.storypage>img').css('height',$(window).height());	
+	})
+
+// page部分
+	$('div.openshow').click(function(){
+		$('div.openshow').slideUp('slow');
+		$('div.content').css('display','block');
+		$('div.storypage:eq(0)').css('display','block');
+		for(var i=0;i<=5;i++){
+			$('div.word0>li:eq('+i+')').delay(1000+i*2500).animate({
+				width:"500px"
+			},2000)			
+		}
+
+
+		$('div.word0>img').delay(1000).animate({
+			left:"500px"
+		},2000).animate({
+			left:"0",
+			top:"-40px"
+		},500).animate({
+			left:"500px",
+			top:"-40px"
+		},2000).animate({
+			left:"0",
+			top:"20px"
+		},500).animate({
+			left:"500px",
+			top:"20px"
+		},2000).animate({
+			left:"0",
+			top:"80px"
+		},500).animate({
+			left:"500px",
+			top:"80px"
+		},2000).animate({
+			left:"0",
+			top:"140px"
+		},500).animate({
+			left:"500px",
+			top:"140px"
+		},2000).animate({
+			left:"0",
+			top:"180px"
+		},500).animate({
+			left:"500px",
+			top:"180px"
+		},2000).animate({
+			left:"2000px",
+			top:"180px"
+		},1000).fadeOut();
+		$('p.btn_jump').delay(15500).fadeIn();
+	})
+
+	$(function(){
+		$('div.openword').animate({
+			height:'700px'
+		},6000)	
+
+	})
+	$('p.btn_jump').click(function(){
+		$('div.storypage:eq(0)').fadeOut();
+		$('div.storypage:eq(1)').fadeIn();
+		$('p.word1').delay(1000).fadeIn(1500);
+		$('p.btn_left').delay(2500).fadeIn();
+	})
+
+	$('p.btn_left').click(function(){
+		$('div.storypage:eq(2)').css('display','block');
+		$('div.storypage:eq(1)').animate({
+			left:"-1800px"
+		},1000).fadeOut('fast');
+		$('p.btn_down').delay(1000).fadeIn();
+		
+	})
+
+// isay 部分
+	$('li.isay').mouseover(function(){
+		$('div.int:animated').stop().hide();
+		$('li.isay>div.int').slideDown();
+	}).mouseout(function(){
+		$('li.isay>div.int').slideUp();
+	})
+
+// timer部分
+	var mint = 0;var secd = 0;
+	var s = setInterval(function(){
+		$('li.timer>span:eq(0)').text(secd);
+		$('li.timer>span:eq(1)').text(mint);
+		mint++;
+		if(mint>=60){
+			mint = 0;
+			secd++;
+		}
+	},1000)
+
+//page0
+
+//page1
+	$('div.glass_all').mouseover(function(){
+		$('div.big').show();
+		$('div.big').css('cursor','crosshair');
+		$('div.glass_all').mousemove(function(ent){
+			var left = ent.pageX - $('div.glass_all').offset().left - 50;
+			var top = ent.pageY - $('div.glass_all').offset().top - 50;
+			$('div.big').css({left:left,top:top});
+			$('div.big').scrollTop((top+50)*800/400-50);
+            $('div.big').scrollLeft((left+50)*800/400-50);
+		})
+	})
+	$('div.glass_all').mouseout(function(){
+		$('div.big').hide();
+	})
+
+//page2 
+
+	var tol;	
+	$('td.plus').click(function(){
+		var numb = Number($(this).parent().find('td:eq(3)').text());
+		numb++;
+		var sin_tol = Number($(this).parent().find('td:eq(4)').text());;
+		sin_tol += Number($(this).parent().find('td:eq(2)').text());
+		tol = Number($('table').find('span').text());
+		tol += Number($(this).parent().find('td:eq(2)').text());
+		$(this).parent().find('td:eq(3)').text(numb);
+		$(this).parent().find('td:eq(4)').text(sin_tol);
+		$('table').find('span').text(tol);
+	})
+
+	$('td.minus').click(function(){
+		var numb = Number($(this).parent().find('td:eq(3)').text());
+		numb--;
+		if(numb < 0){
+			return false;
+		}
+		var sin_tol = Number($(this).parent().find('td:eq(4)').text());
+		sin_tol -= Number($(this).parent().find('td:eq(2)').text());
+		tol = Number($('table').find('span').text());
+		tol -= Number($(this).parent().find('td:eq(2)').text());
+		$(this).parent().find('td:eq(3)').text(numb);
+		$(this).parent().find('td:eq(4)').text(sin_tol);
+		$('table').find('span').text(tol);
+	})
+
+	$('th.buy').click(function(){
+		if(tol>0){
+			$('table').slideUp('fast');
+			$('p.buyed').fadeIn();
+			$('p.buyed>span').text(tol);
+		}else{
+			alert('没买东西,付什么钱');
+		}
+	})
+
+//page3
+	$('p.btn_down').click(function(){
+		$('div.page2').fadeOut();
+		$('div.page3').fadeIn();
+		for(var i=0;i<=9;i++){
+		$('div.page3>ul>li:eq('+i+')').delay(i*3000-2000).fadeIn('10').animate({
+			fontSize:"60px"
+		},1000).animate({
+			fontSize:"30px"
+		},1000)
+	}
+		$('div.page3>ul>li:eq(10)').delay(28000).fadeIn('10').animate({
+			fontSize:"60px"
+		},1000)
+		$('p.btn_go').delay(29000).slideDown();
+	})
+//page4
+	$('p.btn_go').click(function(){
+		$('div.page3').fadeOut();
+		$('div.page4').fadeIn();
+
+		for(var i=0;i<=2;i++){
+			$('div.showp1>img:eq('+i+')').delay(i*6000).fadeIn()
+			.animate({
+				left:"-250px"
+			},1000).animate({
+				left:"-250px",
+				top:"-100px"
+			},1000).animate({
+				left:"0px",
+				top:"-100px"
+			},1000).animate({
+				left:"0px",
+				top:"0px"			
+			},1000).animate({
+				width:$('div.showp1').width(),
+				height:$('div.showp1').height()
+			},1000).delay(1000)
+			.fadeOut();
+			$('div.showw1>p:eq('+i+')').delay(i*6000).fadeIn().delay(5000).fadeOut();
+
+
+			$('div.showp2>img:eq('+i+')').delay(i*6000+19000).fadeIn()
+			.animate({
+				left:"-250px"
+			},1000).animate({
+				left:"-250px",
+				top:"-100px"
+			},1000).animate({
+				left:"0px",
+				top:"-100px"
+			},1000).animate({
+				left:"0px",
+				top:"0px"			
+			},1000).animate({
+				width:$('div.showp1').width(),
+				height:$('div.showp1').height()
+			},1000).delay(1000)
+			.fadeOut();
+			$('div.showw2>p:eq('+i+')').delay(i*6000+19000).fadeIn().delay(5000).fadeOut();
+		}
+		$('div.show3').delay(39000).slideDown(1000);
+		$('p.btn_go1').delay(42000).fadeIn();
+
+	})
+		//page5
+		$('p.btn_go1').click(function(){
+			$('div.page4').fadeOut();
+			$('div.page5').fadeIn();
+			$('div.cont1').slideDown().delay(3000).fadeOut();
+			$('div.cont2').delay(4000).slideDown();
+			$('p.btn_end').delay(5000).fadeIn();		
+		})
+
+
+		//page_end
+		$('p.btn_end').click(function(){
+			$('div.page5').fadeOut();
+			$('div.page_end').fadeIn();
+			$('div.page_end>div>ul').animate({
+				top:"-800px"
+			},15000)
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .box{
+        width:306px;
+        height:90px;
+        border:1px solid red;
+    }
+    .box span{
+        width:100px;
+        height:90px;
+        float:left;
+        border:1px solid blue;
+    }
+    .box span h2{
+        font-weight: normal;
+        font-size:20px;
+        text-align: center;
+        line-height:30px;
+        cursor:pointer; 
+    }
+    #div1{
+        width:100px;
+        height:60px;
+        background:red; 
+        display:none; 
+    }
+    #div2{
+        width:100px;
+        height:60px;
+        background:blue; 
+        display:none;  
+    }
+    #div3{
+        width:100px;
+        height:60px;
+        background:green; 
+        display:none;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oS1=document.getElementById('s1');
+        var oS2=document.getElementById('s2');
+        var oS3=document.getElementById('s3');
+        var oDiv1=document.getElementById('div1');
+        var oDiv2=document.getElementById('div2');
+        var oDiv3=document.getElementById('div3'); 
+        var oH_1=document.getElementById('h_1');
+        var oH_2=document.getElementById('h_2');
+        var oH_3=document.getElementById('h_3');
+        oS1.onmouseover=function(){
+            oDiv1.style.display = 'block';
+        }
+        oS1.onmouseout=function(){
+            oDiv1.style.display = 'none';
+        }
+        oS2.onmouseover=function(){
+            oDiv2.style.display = 'block';
+        }
+        oS2.onmouseout=function(){
+            oDiv2.style.display = 'none';
+        }
+        oS3.onmouseover=function(){
+            oDiv3.style.display = 'block';
+        }
+        oS3.onmouseout=function(){
+            oDiv3.style.display = 'none';
+        } 
+    }
+</script>
+</head>
+<body>
+    <div class="box">
+        <span id="s1">
+             <h2 id="h_1">本地服务</h2>
+             <div id="div1"></div>
+        </span>
+        <span id="s2">
+             <h2 id="h_2">手机58</h2>
+             <div id="div2"></div>
+        </span>
+        <span id="s3">
+             <h2 id="h_3">58帮帮</h2>
+             <div id="div3"></div>
+        </span>
+    </div>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+*{margin:0; padding:0;}
+body{overflow:hidden;}
+canvas{background:#000;}
+</style>
+<script>
+function rnd(n,m){
+	return Math.floor(Math.random()*(m-n)+n);
+}
+window.onload = function(){
+	var oC = document.getElementById('c1');
+	oC.width = document.documentElement.clientWidth;
+	oC.height = document.documentElement.clientHeight;
+	var gd = oC.getContext('2d');
+	
+	var LEN = 50;
+	var aOldPoint = [];
+	
+	var N = 5;
+	var aPoint = [];
+	for(var i=0;i<N;i++){
+		aPoint.push({
+			x:rnd(0,oC.width),
+			y:rnd(0,oC.height),
+			iSpeedX:rnd(-10,10),
+			iSpeedY:rnd(-10,10)
+		});
+	}
+	
+	//画、运动
+	setInterval(function(){
+		//清除
+		gd.clearRect(0,0,oC.width,oC.height);
+		
+		//运动，改变每个点的x和y
+		for(var i=0;i<N;i++){
+			if(aPoint[i].x<0){
+				aPoint[i].iSpeedX*=-1;
+			}
+			
+			if(aPoint[i].y<0){
+				aPoint[i].iSpeedY*=-1;
+			}
+			
+			if(aPoint[i].x>oC.width){
+				aPoint[i].iSpeedX*=-1;
+			}
+			
+			if(aPoint[i].y>oC.height){
+				aPoint[i].iSpeedY*=-1;
+			}
+			
+			
+			
+			aPoint[i].x+=aPoint[i].iSpeedX;
+			aPoint[i].y+=aPoint[i].iSpeedY;
+		}
+		
+		//画点
+		for(var i=0;i<N;i++){
+			createPoint(aPoint[i]);
+		}
+		
+		//连线
+		gd.beginPath();
+		gd.moveTo(aPoint[0].x,aPoint[0].y);
+		for(var i=1;i<N;i++){
+			gd.lineTo(aPoint[i].x,aPoint[i].y);
+		}
+		gd.closePath();
+		gd.strokeStyle = '#fff';
+		gd.stroke();
+		
+		
+		//存点
+		var arr = [];
+		for(var i=0;i<N;i++){
+			arr.push({
+				x:aPoint[i].x,
+				y:aPoint[i].y,
+				iSpeedX:aPoint[i].iSpeedX,
+				iSpeedY:aPoint[i].iSpeedY
+			});
+		}
+		
+		//限制oldPoint的个数
+		aOldPoint.push(arr);
+		if(aOldPoint.length>LEN){
+			aOldPoint.shift();
+		}
+		
+		//连线
+		for(var i=0;i<LEN;i++){
+			gd.beginPath();
+			gd.moveTo(aOldPoint[i][0].x,aOldPoint[i][0].y);
+			for(var j=1;j<aOldPoint[i].length;j++){
+				gd.lineTo(aOldPoint[i][j].x,aOldPoint[i][j].y);
+			}
+			gd.closePath();
+			gd.strokeStyle = 'rgba(255,255,255,'+(i/LEN)+')';
+			gd.stroke();
+		}
+		
+	},16);
+	
+	
+	//画点
+	function createPoint(oPoint){
+		gd.beginPath();
+		gd.rect(oPoint.x,oPoint.y,1,1);
+		gd.fillStyle = '#fff';
+		gd.fill();
+	}
+};
+</script>
+</head>
+
+<body>
+	<canvas id="c1"></canvas>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;  
+    }
+    #box{
+        width:100%;
+        height:200px;
+        background:green;  
+    }
+</style>
+<script>
+    window.onload=window.onresize=function(){
+        var oBox = document.getElementById('box');
+        var clientW = document.documentElement.offsetWidth; 
+        if(clientW>=1000){
+            oBox.style.background = 'green';
+        }else if(clientW>=800&&clientW<1000){
+            oBox.style.background = 'red';
+        }else if(clientW>=600&&clientW<800){
+            oBox.style.background = 'orange';
+        }else if(clientW>=400&&clientW<600){
+            oBox.style.background = 'blue';
+        }else if(clientW>=200&&clientW<400){
+            oBox.style.background = 'pink';
+        }else if(clientW<200){
+            oBox.style.background = 'yellow';
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="box">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		line-height: 30px;
+	}
+	#div1{
+		width: 100%;
+		height: 30px;
+		background: red;
+	}
+	#div2{
+		height: 30px;
+		display: none;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var oDiv1 = document.getElementById('div1');
+		var oDiv2 = document.getElementById('div2');
+		var oDivT = oDiv1.offsetTop
+		window.onscroll = function(){
+			//var oDivT = oDiv1.offsetTop ||oDiv2.offsetTop;
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			// 什么时候需要吸顶 - 当滚动条距离顶部距离大于等于物体距离顶部距离的时候
+			if(scrollTop >= oDivT){
+				if(window.navigator.userAgent.indexOf('MSIE 6.0')!=-1){
+					oDiv1.style.position = 'absolute';
+					oDiv1.style.top = scrollTop + 'px';
+					oDiv1.style.left = 0;
+				}else{
+					oDiv1.style.position = 'fixed';
+					oDiv1.style.top = 0;
+				}
+				oDiv2.style.display = 'block';
+			}else{
+				oDiv1.style.position = '';
+				oDiv2.style.display = 'none';
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，
+	<div id="div1"></div>
+	<div id="div2"></div>
+	智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。
+</body>
+</html>

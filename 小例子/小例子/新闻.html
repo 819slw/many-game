@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style:none;
+    }
+    #box{
+        width: 500px;
+        height: 300px;
+        margin:10px auto;
+    }
+    #box dl{
+        padding-bottom: 10px;
+        border-bottom: 1px dashed #ccc;
+        margin-top: 10px;
+    }
+    #box dt{
+        font-size: 20px;
+    }
+    #box dd{
+        font-size: 12px;
+        margin-top: 8px;
+    }
+    #box a{
+        text-decoration: none;
+        color:#000;
+        margin:0 3px;
+    }
+    #box a:hover{
+        text-decoration: underline;
+    }
+</style>
+<script>
+    //定义大数组
+    var newsArr = [{
+        'title':[
+            '习近平同普京会谈：两国世代友好',
+            '专题'
+        ],
+        'href':[
+            'http://www.cankaoxiaoxi.com/roll10/20160626/1207211.shtml',
+            'http://www.xinhuanet.com/world/cnleaders/xijinping/xjpcf1606/index.htm'
+        ],
+        'child':[
+            {
+                'title' : '《中俄睦邻友好合作条约》签署15周年',
+                'href' : 'http://cnews.chinadaily.com.cn/2016-06/26/content_25859759.htm'
+            },{
+                'title' : ' 国平',
+                'href' : 'http://news.china.com.cn/txt/2016-06/26/content_38747172.htm'
+            },{
+                'title' : '漫评',
+                'href' : 'http://opinion.cctv.com/2016/06/24/ARTIr44uOsEog2VXzvkQJNEQ160624.shtml'
+            },{
+                'title' : '治国理政',
+                'href' : 'http://china.huanqiu.com/special/zhiguolizheng/?from=bdwz'
+            }]  
+    },{
+        'title' : [
+            '李克强体验“飞鸽”：愿为中国自行车做广告'
+        ],
+        'href' : [
+            'http://www.gov.cn/premier/2016-06/26/content_5085716.htm'
+        ],
+        'child' : [{
+            'title' : '见世界经济论坛主席',
+            'href' : 'http://cnews.chinadaily.com.cn/2016-06/26/content_25859764.htm'
+        },{
+            'title' : ' 天津考察',
+            'href' : 'http://tv.cctv.com/2016/06/26/VIDE81oipjP3VfPt8vC3kifj160626.shtml'
+        },{
+            'title' : '新旧动能转换',
+            'href' : 'http://www.gov.cn/premier/2016-06/26/content_5085747.htm'
+        }]
+    },{
+        'title' : [
+            '习近平同普京会谈：两国世代友好',
+            '专题'
+        ],
+        'href' : [
+            'http://www.cankaoxiaoxi.com/roll10/20160626/1207211.shtml',
+            'http://www.xinhuanet.com/world/cnleaders/xijinping/xjpcf1606/index.htm'
+        ],
+        'child' : [{
+            'title' : '《中俄睦邻友好合作条约》签署15周年',
+            'href' : 'http://cnews.chinadaily.com.cn/2016-06/26/content_25859759.htm'
+        },{
+            'title' : ' 国平',
+            'href' : 'http://news.china.com.cn/txt/2016-06/26/content_38747172.htm'
+        },{
+            'title' : '漫评',
+            'href' : 'http://opinion.cctv.com/2016/06/24/ARTIr44uOsEog2VXzvkQJNEQ160624.shtml'
+        },{
+            'title' : '治国理政',
+            'href' : 'http://china.huanqiu.com/special/zhiguolizheng/?from=bdwz'
+        }]
+    }];
+    window.onload=function(){
+        var oBox = document.getElementById('box');
+        //循环大数组
+        for(var i=0; i<newsArr.length; i++){
+            //创建
+            var oDl = document.createElement('dl');
+            var oDt = document.createElement('dt');
+            //循环每个json的title
+            for(var j=0; j<newsArr[i].title.length; j++){
+                //创建a标签
+                var oA = document.createElement('a');
+                //a标签输入内容
+                oA.innerHTML = newsArr[i].title[j];
+                //href地址
+                oA.href = newsArr[i].href[j];
+                //打开新页面
+                oA.target = '_blank';
+                //dt里添加a标签
+                oDt.appendChild(oA);   
+            }  
+            //创建dd
+            var oDd = document.createElement('dd');
+            //循环每个数组中的child
+            for(var j=0; j<newsArr[i].child.length; j++){
+                //创建a标签
+                var oA = document.createElement('a');
+                //a标签添加内容
+                oA.innerHTML = newsArr[i].child[j].title;
+                //href地址
+                oA.href = newsArr[i].child[j].href;
+                //打开新页面
+                oA.target = '_blank';
+                //dd里添加a标签
+                oDd.appendChild(oA); 
+            } 
+            //大div添加dl
+            oBox.appendChild(oDl);
+            //dl里添加dt
+            oDl.appendChild(oDt);
+            //dl里添加dd
+            oDl.appendChild(oDd); 
+        } 
+    }
+</script>
+</head>
+<body>
+    <div id="box">
+        
+    </div>
+</body>
+</html>

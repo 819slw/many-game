@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<!--[if lte IE 6]>
+<script src="js/DD_belatedPNG_0.0.8a.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        DD_belatedPNG.fix('a');
+    </script>
+<![endif]-->
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" /></head>
+<script>
+  window.onload=function(){
+        var oFillIn=document.getElementById('fill_in');
+        var aInput=oFillIn.getElementsByTagName('input');
+        var oBtn=document.getElementById('go');
+        var oContent=document.getElementById('date');
+        var aP=oContent.getElementsByTagName('p');
+
+        var timer;
+
+
+        oBtn.onclick=function(){
+            clearInterval(timer);
+            var y=aInput[0].value;
+            var m=aInput[1].value;
+            var d=aInput[2].value;
+            if(isNaN(y) || isNaN(m) || isNaN(d)){
+                alert('输错了');
+				for(var i=0; i<aInput.length; i++){
+					aInput[i].value='';
+					}
+            }else{
+                // 目标时间
+                var oDate=new Date();//获取当前时间
+                oDate.setFullYear(y, m-1, d);//获取当前年月日
+                oDate.setHours(0, 0, 0, 0);//获取当前小时
+                var target=oDate.getTime();//时间戳；
+                timer=setInterval(countdown, 1000);//开定时器；
+				
+				//封装函数；
+                function countdown(){
+					
+                    // 当前时间
+                    var oDate2=new Date();
+                    var now=oDate2.getTime();
+                    // 求差值 当前时间距离目标时间的毫秒数
+                    var n=parseInt((target-now)/1000);
+                    // 天数
+                    var day=parseInt(n/86400);
+                    aP[0].innerHTML=day;
+                    // 小时
+                    n%=86400;
+                    var h=parseInt(n/3600);
+                    aP[1].innerHTML=h;
+                    // 分钟
+                    n%=3600;
+                    var m2=parseInt(n/60);
+                    aP[2].innerHTML=m2;
+                    // 秒
+                    n%=60;
+                    aP[3].innerHTML=n;
+                }
+                countdown();
+            }
+        }
+    }
+</script>
+<body>
+
+<div id="zhinengshe">
+    <div id="fill_in">
+        <span class="title">请输入：</span>
+        <input type="text" class="long_text" value="2016" />
+        <span class="space1">年</span>
+        <input type="text" class="text" value="10" />
+        <span class="space2">月</span>
+        <input type="text" class="text" value="1" />
+        <span class="space3">日</span>
+    </div>
+
+    <a href="javascript:;" id="go" class="go"></a>
+
+    <p id="target">
+        现在距离 -
+        <strong>2016年10月1日</strong>
+        - 还剩：
+    </p>
+
+    <div id="date">
+        <p id="day">00</p>
+        <p id="hour">00</p>
+        <p id="min">00</p>
+        <p id="sec">00</p>
+    </div>
+
+    <h1 title="个人站itjinhang.github.io"><a href="https://itjinhang.github.io"></a></h1>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+        var aInput = document.getElementsByTagName('input');
+        var oBtn = aInput[2];
+        oBtn.onclick=function(){
+            var oT1 = parseInt(aInput[0].value);
+            var oT2 = parseInt(aInput[1].value);
+            if(isNaN(oT1) && isNaN(oT2)){
+                alert('两个都不是数字');
+            }else if(isNaN(oT1)){
+                alert('第一个不是数字');
+            }else if(isNaN(oT2)){
+                alert('第二个不是数字');  
+            }else{
+                if(oT1>oT2){
+                    alert(oT1);
+                }else if(oT2>oT1){
+                    alert(oT2);
+                }else{
+                    alert('相等');
+                }
+            }
+        }  
+    }
+</script>
+</head>
+<body>
+    <input type="text" name="" value="" placeholder="">
+    <input type="text" name="" value="" placeholder="">
+    <input type="button" name="" value="比较大小">
+</body>
+

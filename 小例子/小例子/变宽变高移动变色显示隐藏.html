@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;  
+    }
+    div{
+        width:200px;
+        height:200px; 
+        background: red;
+        position:absolute;
+        top:50px;
+        left:0;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var oBtn3 = document.getElementById('btn3'); 
+        var oBtn4 = document.getElementById('btn4');
+        var oBtn5 = document.getElementById('btn5'); 
+        var oBtn6 = document.getElementById('btn6');
+        var oBtn7 = document.getElementById('btn7');
+        var oDiv = document.getElementById('div1');
+        oBtn1.onclick=function(){
+            oDiv.style.width = '400px'; 
+        }
+        oBtn2.onclick=function(){
+            oDiv.style.height = '400px';
+        }
+        oBtn3.onclick=function(){
+            oDiv.style.background = 'blue';
+        }
+        oBtn4.onclick=function(){
+            oDiv.style.left = '200px';
+        }
+        oBtn5.onclick=function(){
+            oDiv.style.display = 'block';
+        }
+        oBtn6.onclick=function(){
+            oDiv.style.display = 'none';
+        }
+        oBtn7.onclick=function(){
+            oDiv.style.width = '200px';
+            oDiv.style.height = '200px';
+            oDiv.style.background = 'red';
+            oDiv.style.left = '0';
+            oDiv.style.display = 'block';
+        }
+    }
+</script>
+</head>
+<body>
+    <input type="button" name="" value="变宽" id="btn1">
+    <input type="button" name="" value="变高" id="btn2">
+    <input type="button" name="" value="变色" id="btn3">
+    <input type="button" name="" value="移动" id="btn4">
+    <input type="button" name="" value="隐藏" id="btn6">
+    <input type="button" name="" value="显示" id="btn5">
+    <input type="button" name="" value="还原" id="btn7">
+    <div id="div1"></div>
+
+</body>
+</html>

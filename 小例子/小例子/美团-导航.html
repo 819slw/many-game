@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;  
+        font-weight: normal;
+    }
+    div{
+        width:80px;
+        height:120px;
+        background:#cccc;
+        text-align: center;
+        line-height: 30px;
+        font-size: 20px;
+        float:left;   
+        margin:2px;
+    }
+    div h2{
+        font-size:22px;
+        width:80px;
+        height:30px; 
+        background:blue;
+        color:#fff;
+    }
+    ul{
+        width:80px;
+        height:90px;
+        border:1px solid red;
+        float:left;  
+        display:none; 
+    }
+    ul li{
+        width:80px;
+        height:30px ;
+        float:left;
+        border-bottom: 1px solid green;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var  oH_1=document.getElementById('h_1');
+        var  oH_2=document.getElementById('h_2');
+        var  oH_3=document.getElementById('h_3'); 
+        var  oH_4=document.getElementById('h_4'); 
+        var  oUl1=document.getElementById('ul1');
+        var  oUl2=document.getElementById('ul2');
+        var  oUl3=document.getElementById('ul3');
+        var  oUl4=document.getElementById('ul4');
+        var  oDiv1=document.getElementById('div1');
+        var  oDiv2=document.getElementById('div2');
+        var  oDiv3=document.getElementById('div3');
+        var  oDiv4=document.getElementById('div4');   
+        oH_1.onmouseover=function(){
+            oUl1.style.display = 'block';
+        }  
+        oDiv1.onmouseout=function(){
+            oUl1.style.display = 'none';
+        }
+        oH_2.onmouseover=function(){
+            oUl2.style.display = 'block';
+        }  
+        oDiv2.onmouseout=function(){
+            oUl2.style.display = 'none';
+        }
+        oH_3.onmouseover=function(){
+            oUl3.style.display = 'block';
+        }  
+        oDiv3.onmouseout=function(){
+            oUl3.style.display = 'none';
+        }
+        oH_4.onmouseover=function(){
+            oUl4.style.display = 'block';
+        }  
+        oDiv4.onmouseout=function(){
+            oUl4.style.display = 'none';
+        }  
+    }
+</script>
+</head>
+<body>
+    <div id="div1">
+       <h2 id="h_1">购物车</h2>
+       <ul id="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li style="border:none;">3</li>
+       </ul>
+    </div>
+    <div id="div2">
+       <h2 id="h_2">商家</h2>
+       <ul id="ul2">
+            <li>1</li>
+            <li>2</li>
+            <li style="border:none;">3</li>
+       </ul>
+    </div>
+    <div id="div3">
+       <h2 id="h_3">客服</h2>
+       <ul id="ul3">
+            <li>1</li>
+            <li>2</li>
+            <li style="border:none;">3</li>
+       </ul>
+    </div>
+    <div id="div4">
+       <h2 id="h_4">更多</h2>
+       <ul id="ul4">
+           <li>1</li>
+           <li>2</li>
+           <li style="border:none;">3</li>
+       </ul>
+    </div>
+    
+    
+    
+    
+</body>
+</html>

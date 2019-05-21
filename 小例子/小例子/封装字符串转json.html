@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style></style>
+<script>
+	function strToJson(str){
+		//{a:1,b:2,c:3,d:4}
+		var json = {};
+
+		// 切割字符串
+		var arr = str.split('&');
+		//arr = ['a=1','b=2','c=3','d=4']
+
+		for(var i = 0; i < arr.length; i++){
+			var n = arr[i].split('=');
+			json[n[0]] = n[1]
+		}
+
+		return json;
+	}
+
+	// var aaa = 'a=1&b=2&c=3&d=4';
+	var bbb = 'name=xiaoming&age=18&add=shanghai';
+	console.log(strToJson(bbb));
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0; 
+    }
+    div{
+        width:100px;
+        height:100px;
+        border:3px solid #000;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oS = document.getElementById('select');
+        var oT = document.getElementById('text');
+        var oBtn = document.getElementById('btn');
+        var oBox = document.getElementById('box');
+        oBtn.onclick = function(){
+            var name = oS.value;
+            var value = oT.value;
+            oBox.style[name] =value;  
+        }    
+    }
+</script>
+</head>
+<body>
+    <select id="select">
+        <option value="width">变宽</option>
+        <option value="height">变高</option>
+        <option value="background">变色</option>
+        <option value="display">是否显示</option>}
+        
+    </select>
+    <input type="text" name="" value="" placeholder="" id="text">
+    <input type="button" name="" value="确认" id="btn">
+    <br>
+    <div id="box"></div>
+</body>
+</html>

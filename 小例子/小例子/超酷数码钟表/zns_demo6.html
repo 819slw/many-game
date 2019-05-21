@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="style/zns_style.css" rel="stylesheet" type="text/css" />
+<script>
+    function toDou(n){
+        return  n<10?'0'+n:''+n; 
+    }
+    window.onload=function(){
+        var aYearImg = document.getElementById('year').getElementsByTagName('img');
+        var aTimeImg = document.getElementById('time').getElementsByTagName('img');
+        var arr = [
+            'seven',
+            'one',
+            'two',
+            'three',
+            'four',
+            'five',
+            'six'
+        ];
+        function time(){
+            var oDate = new Date();
+            var Y = oDate.getFullYear();
+            var M = oDate.getMonth();
+            var D = oDate.getDate();
+            var h = oDate.getHours();
+            var m = oDate.getMinutes();
+            var s = oDate.getSeconds();
+            var week = oDate.getDay();
+            var str1 = Y+'-'+toDou(M+1)+'-'+toDou(D);
+            var str2 = toDou(h)+':'+toDou(m)+':'+toDou(s);
+            for(var i = 0; i < aYearImg.length-1; i++){
+                if(str1.charAt(i) == '-'){
+                    continue;
+                }
+                aYearImg[i].src = 'images/'+str1.charAt(i)+'.png';
+            }
+            for(var i = 0; i < aTimeImg.length-2; i++){
+                if(str2.charAt(i) == ':'){
+                    continue;
+                }
+                aTimeImg[i].src = 'images/'+str2.charAt(i)+'.png';
+            }
+            aTimeImg[aTimeImg.length-1].src = 'images/'+arr[week]+'.png';
+        }
+        time();
+        setInterval(time,1000);
+    }
+</script>
+</head>
+
+<body>
+
+<div id="clock" class="date">
+    <h2><img src="images/title.png" /></h2>
+    <div class="year" id="year">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/year.png" alt="year" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/month.png" alt="month" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/seven.png" alt="seven" />
+    </div>
+    <div class="time" id="time">
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img src="images/sign.png" alt="sign" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="num" src="images/0.png" alt="0" />
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img class="num2" src="images/one.png" alt="one" />
+    </div>
+    <div class="url" title="智能社-超酷时钟"><a href="http://www.zhinengshe.com/" target="_blank"><img src="images/zns.png" alt="智能社" /></a></div>
+</div>
+
+</body>
+</html>

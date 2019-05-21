@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style></style>
+<script>
+var json = {
+	'name' : '小明',
+	'sex' : '男',
+	'age' : 16,
+	'add' : '杭州',
+	'job' : '学生',
+	'height' : 168,
+	'weight' : 60,
+	'sisters' : [{
+		'name' : '大花',
+		'sex' : '女',
+		'age' : 24,
+		'add' : '上海',
+		'job' : '厨师',
+		'height' : 155,
+		'weight' : 80
+	},{
+		'name' : '小花',
+		'sex' : '女',
+		'age' : 20,
+		'add' : '深圳',
+		'job' : '模特',
+		'height' : 180,
+		'weight' : 50
+	}]
+}
+
+// document.write('小明的年龄' + json.age)
+document.write('小明大姐的年龄' + json.sisters[0].age)
+</script>
+</head>
+
+<body>
+</body>
+</html>

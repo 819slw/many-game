@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    function findInArr(arr,n){
+        for(var i=0; i<arr.length; i++){
+            if(arr[i] == n){
+                return true; 
+            }
+        }
+        return false; 
+    }    
+    function getByClass(oParent,sClass){
+        if(oParent.getElementsByClassName){
+            return oParent.getElementsByClassName(sClass); 
+        }else{
+            var aEle = document.body.getElementsByTagName('*');
+            var arr = [];
+            for(var i=0; i<arr.length; i++){
+                var tmp = aEle[i].className.split(' ');
+                if(findInArr(tmp,sClass)){
+                    arr.push(aEle[i]); 
+                } 
+            }
+            return arr; 
+        }
+    }
+    window.onload=function(){
+        var aRed = getByClass(document.body,'red');
+        for(var i=0; i<aRed.length; i++){
+            aRed[i].style.background = 'red';
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="red blue">red blue</div>
+    <div class="red1">red1</div>
+    <div class="red">red</div>
+    <div class="blue">blue</div>
+    <div class="red">red</div>
+</body>
+</html>

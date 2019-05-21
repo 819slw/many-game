@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    ul{
+        width: 286px;
+        margin:10px auto;
+    }
+    li{
+        width: 26px;
+        height: 26px;
+        background: url(star.gif);
+        float: left;
+    }
+    .on{
+        background-position: 0px -29px;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var aLi = document.getElementsByTagName('li');
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                for(var j = 0; j < aLi.length; j++){
+                    //正数||负数
+                    if((j >= 5 && j <= this.index) || (j <= 5 && j >= this.index)){
+                        console.log(this.index); 
+                        //alert(j);
+                        aLi[j].className = 'on';
+                    }else{
+                        aLi[j].className = '';
+                    }
+                }
+            }
+            aLi[i].onclick = function(){
+                alert(this.index-5);
+            }
+        }
+    }
+</script>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

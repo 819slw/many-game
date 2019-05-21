@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style></style>
+<script>
+	var json = {a:1,b:2,c:3,d:4};
+	var arr = [];
+
+	// 循环json操作每一项
+	for(var name in json){
+		//name ->  a|b|c|d
+		// json[name] -> 1|2|3|4
+
+		// 往数组里添加
+		arr.push(name+'='+json[name]);
+	}
+
+	// 把数组转成字符串
+	var str = arr.join('&');
+
+	console.log(str);
+</script>
+</head>
+
+<body>
+</body>
+</html>

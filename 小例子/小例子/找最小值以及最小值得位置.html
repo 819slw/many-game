@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style></style>
+<script>
+	var arr = [59,101,32,10,78,53,1,200,71];
+
+	// 假设一个最小值
+	var iMin = arr[0];
+	// 假设最小的位置
+	var iMinIndex = 0;
+
+	for(var i = 1; i < arr.length; i++){
+		if(arr[i] < iMin){
+			iMin = arr[i];
+			iMinIndex = i;
+		}
+	}
+
+	document.write('最小值是'+iMin+',出现的位置是'+iMinIndex);
+</script>
+</head>
+
+<body>
+</body>
+</html>

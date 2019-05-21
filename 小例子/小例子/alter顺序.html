@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+        var oBox = document.getElementsByTagName('div')[0];
+        oBox.onclick=function(){
+            alert(1);
+        }; 
+        oBox.onclick=function(){
+            alert(2);
+        };
+        //2
+    }; 
+</script>
+</head>
+<body>
+    <div style="width:50px; height:50px; background:red; text-align: center; line-height: 50px; cursor:pointer;">点击</div>
+</body>
+</html>

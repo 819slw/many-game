@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+        var aInput=document.getElementsByTagName('input');
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick=function(){
+            var count = 0;
+            var ok = true;
+            for(var i=0; i<aInput.length-1; i++){
+                var n = parseInt(aInput[i].value);
+                if(isNaN(n)){
+                    alert('第'+(i+1)+'个是错的');
+                    ok = false; 
+                } 
+                count+=n ;
+            } 
+            if(ok){
+                alert(count);
+            }
+        } 
+    }
+</script>
+</head>
+<body>
+    <input type="text" name="" value="" placeholder="">+
+    <input type="text" name="" value="" placeholder="">+
+    <input type="text" name="" value="" placeholder="">+
+    <input type="text" name="" value="" placeholder="">+
+    <input type="text" name="" value="" placeholder="">=
+    <input type="button" name="" value="求和" id="btn">
+</body>
+</html>

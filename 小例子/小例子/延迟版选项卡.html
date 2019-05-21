@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;  
+    }
+    .box{
+        width:610px;
+        height:500px; 
+        position:relative;   
+    }
+    input{
+        width:100px;
+        height:30px;
+        text-align: center;
+        line-height: 30px;
+        margin:3px; 
+        cursor:pointer;  
+    }
+    .box a{
+        display:inline-block;
+        text-decoration: none;
+        cursor:pointer;
+        width:80px;
+        height:30px;
+        color:#fff;
+        background:orange;
+        line-height: 30px;
+        text-align: center;    
+    }
+    .box div{
+        width:480px;
+        height:450px;
+        background:#ccc;
+        text-align: center;
+        line-height: 450px;
+        font-size:30px;
+        color:red; 
+        display:none;    
+    }
+    .box ul{
+        position:absolute;
+        bottom:3px;
+        left:150px;   
+    }
+    .box ul li{
+        width:20px;
+        height:20px;
+        text-align: center;
+        line-height: 20px;
+        color:red;  
+        cursor:pointer;
+        float:left;
+        color:#fff;
+        background:orange;
+        margin:5px;
+    }
+    .box .on{
+        background:blue;
+        color:#fff;  
+    }
+   .box ul li.show{
+        background:red;
+        color:#fff; 
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oBox = document.getElementById('box');
+        var aDiv = oBox.getElementsByTagName('div');  
+        var aInput = oBox.getElementsByTagName('input');
+        var count =0; 
+        var timer = null;  
+        for(var i=0; i<aInput.length; i++){
+            aInput[i].index = i;  
+            aInput[i].onmouseover=function(){
+                var _this = this; 
+                clearTimeout(timer);
+                timer=setTimeout(function(){
+                    for(var i=0; i<aInput.length; i++){
+                    aDiv[i].style.display = 'none';
+                    aInput[i].className = '';  
+                    }
+                    _this.className = 'on';
+                    aDiv[_this.index].style.display = 'block';
+                },500);
+            }
+            aInput[i].onmouseout=function(){
+                clearTimeout(timer);
+            }
+        }  
+    }
+</script>
+</head>
+<body>
+    <div class="box" id="box">
+        
+        <input type="button" value="1" class="on"/>
+        <input type="button" value="2"/>
+        <input type="button" value="3"/>
+        <input type="button" value="4"/>
+
+        <div style="display:block;">1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    
+</body>
+</html>

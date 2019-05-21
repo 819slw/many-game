@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1 li{
+            width: 24px;
+            height: 35px;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            float: left;
+            font-size: 25px;
+            line-height: 35px;
+        }
+        #ul1 li img{
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+    </style>
+    <script>
+        function getStyle(obj, name){
+            return (obj.currentStyle || getComputedStyle(obj, false))[name];
+        }
+        function move(obj, json, option){
+            var option=option || {};
+            option.duration=option.duration || 800;
+            option.easing=option.easing || 'ease-out';
+
+            var start={};
+            var dis={};
+            var count=Math.round(option.duration/30);
+
+            for(var name in json){
+                start[name]=parseFloat(getStyle(obj, name));
+                dis[name]=json[name]-start[name];
+            }
+            var n=0;
+            clearInterval(obj.timer);
+            obj.timer=setInterval(function(){
+                n++;
+
+                for(var name in json){
+                    switch(option.easing){
+                        case 'linear':
+                            var a=n/count;
+                            var cur=start[name]+dis[name]*a;
+                            break;
+                        case 'ease-in':
+                            var a=n/count;
+                            var cur=start[name]+dis[name]*a*a*a;
+                            break;
+                        case 'ease-out':
+                            var a=1-n/count;
+                            var cur=start[name]+dis[name]*(1-a*a*a);
+                            break;
+                    }
+                    if(name=='opacity'){
+                        obj.style.opacity=cur;
+                        obj.style.filter='alpha(opacity:'+cur*100+')';
+                    }else{
+                        obj.style[name]=cur+'px';
+                    }
+                }
+
+                if(n==count){
+                    clearInterval(obj.timer);
+                    option.complete && option.complete();
+                }
+            },30);
+        }
+        function toDouble(n){
+            return n<10?'0'+n:''+n;
+        }
+        window.onload = function () {
+            var aImg=document.getElementsByTagName('img');
+            function clock(){
+                var oDate=new Date();
+                var h=oDate.getHours();
+                var m=oDate.getMinutes();
+                var s=oDate.getSeconds();
+
+                var str=toDouble(h)+toDouble(m)+toDouble(s);
+                for(var i=0; i<aImg.length; i++){
+                    // aImg[i].style.top=-35*str.charAt(i)+'px';
+                    move(aImg[i],{'top':-35*str.charAt(i)});
+                }
+            }
+
+            clock();
+            setInterval(clock, 1000);
+        };
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li><img src="num.png" alt=""></li>
+    <li><img src="num.png" alt=""></li>
+    <li>:</li>
+    <li><img src="num.png" alt=""></li>
+    <li><img src="num.png" alt=""></li>
+    <li>:</li>
+    <li><img src="num.png" alt=""></li>
+    <li><img src="num.png" alt=""></li>
+</ul>
+</body>
+</html>

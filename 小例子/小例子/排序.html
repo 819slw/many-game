@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    //封装查找最小值位置函数 参数：数组，开始查找的位置
+    function findMinIndex(arr,start){
+        //假设数组中的最小值
+        var iMin = arr[start];
+        //假设最小值位置
+        var iMinIndex = start;
+        //从开始位置后一位开始循环数组
+        for(var i=start+1; i<arr.length; i++){
+            //判断条件 如果arr中的第i个<假设的最小值
+            if(arr[i]<iMin){
+                //最小值为arr的第i个
+                iMin = arr[i];
+                //最小值的位置是i
+                iMinIndex = i; 
+            }
+        } 
+        //返回最小值位置
+        return iMinIndex; 
+    }
+    window.onload=function(){
+        //定义数组
+        var arr = [59,101,32,10,78,53,1,200,71];
+        //循环数组
+        for(var i=0; i<arr.length; i++){
+            //定义n为最小值
+            var n = findMinIndex(arr,i);
+            //定义空数组
+            var tmp;
+            //tmp赋值为最小值
+            tmp = arr[n];
+            //最小值换位置
+            arr[n] = arr[i];
+            arr[i] = tmp;
+            console.log(arr);   
+        }
+        document.write(arr);
+    }
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

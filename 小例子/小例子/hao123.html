@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+*{margin:0;
+  padding:0;
+  list-style:none;
+  text-decoration:none;
+}
+ul li{width:160px;
+      height:30px;
+      border:1px solid #CCC;
+      line-height:30px;
+      padding-left:20px;
+      margin:20px;
+      float:left;
+      position:relative;
+}
+ul li a{
+        color:#000;
+}
+ul li span{
+      width:12px;
+      height:12px;
+      background:url(img/sc.png) no-repeat;
+      position:absolute;
+      top:10px;
+      right:10px;
+      cursor:pointer;
+}
+ul li i{width:10px;
+        height:10px;
+        background:red;
+        text-align:center;
+        position:absolute;
+        top:10px;
+        right:30px;
+        cursor:pointer;
+}
+#btn2{display:none;
+}
+</style>
+<script>
+    window.onload=function(){
+        var oBtn = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var oT1 = document.getElementById('t1');
+        var oT2 = document.getElementById('t2');
+        var oUl = document.getElementById('ul1');
+        var aSpan = oUl.getElementsByTagName('span');
+        var aI = oUl.getElementsByTagName('i');
+        for(var i=0; i<aSpan.length; i++){
+            aSpan[i].onclick=function(){
+                oUl.removeChild(this.parentNode); 
+            }
+            aI[i].onclick=function(){
+                var oParent = this.parentNode;
+                change(oParent);  
+            }
+        }  
+        function change(oLi){
+            var s1 = oLi.children[0].innerHTML;
+            var s2 = oLi.children[0].href;
+            oT1.value = s1;
+            oT2.value = s2;
+            oBtn.style.display = 'none';
+            oBtn2.style.display = 'inline-block'; 
+            oBtn2.onclick=function(){
+                var oA = oLi.children[0];
+                oA.href = oT2.value;
+                oA.innerHTML = oT1.value; 
+                oT1.value = '';
+                oT2.value = '';
+                oBtn.style.display = 'inline-block';
+                oBtn2.style.display = 'none'; 
+            }   
+        }  
+        oBtn.onclick=function(){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = '<a target="_blank" href="'+oT2.value+'">'+oT1.value+'</a><span></span><i></i>'; 
+            oUl.appendChild(oLi);
+            oT1.value = '';
+            oT2.value = '';
+            var oSpan = oLi.getElementsByTagName('span')[0];
+            oSpan.onclick=function(){
+                oUl.removeChild(oLi); 
+            }
+            var oI =  oLi.getElementsByTagName('i')[0];
+            oI.onclick=function(){
+                change(oLi);
+            } 
+        } 
+    }
+</script>
+</head>
+<body>
+网站名称<input type="text" id="t1"/>
+网站地址<input type="text" id="t2"/>
+<input type="button" name="" value="添加" id="btn1">
+<input type="button" name="" value="修改" id="btn2">
+<ul id="ul1">
+    <li><a target="_blank" href="http://www.baidu.com">百度</a><span></span><i></i></li>
+    <li><a target="_blank" href="http://www.jd.com">京东</a><span></span><i></i></li>
+    <li><a target="_blank" href="http://www.zhinengshe.com">智能社</a><span></span><i></i></li>
+</ul>
+</body>
+</html>

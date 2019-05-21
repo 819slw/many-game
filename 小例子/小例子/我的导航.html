@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{ margin: 0; padding: 0; list-style:none; }
+	#menu{}
+	#menu li{ width:180px; height: 80px; background:#fff; border:1px solid #ccc; float: left; margin:5px; position: relative;}
+	#menu li a{ display: block; text-align:center; line-height: 80px; font-size: 60px; color:#666; text-decoration: none;}
+	#menu li a:hover{ border:3px solid #999; width: 174px; height: 74px; color:orange; }
+	#menu li .close{ width: 20px; height: 20px; position: absolute; right:0; top: 0; cursor: pointer;}
+	#box{ width: 500px; height: 360px; border:2px solid orange; position: absolute; left:50%; top: 50%;
+	margin-left: -250px; margin-top: -180px; display: none;}
+	#box .close{ width: 20px; height: 20px; font-size: 14px; text-align:center; line-height: 20px; position: absolute; right:0; top: 0; cursor: pointer; }
+</style>
+<script>
+	window.onload = function(){
+		var oMenu = document.getElementById('menu');
+		var oBox = document.getElementById('box');
+		var aLi = oMenu.getElementsByTagName('li');
+		var aA = oMenu.getElementsByTagName('a');
+		var oBtn = document.getElementById('btn');
+		var count = null;
+		for(var i = 0; i < aA.length; i++){
+			aA[i].index = i;
+			aA[i].onclick = function(){
+				if(this.innerHTML == '+'){
+					oBox.style.display = 'block';
+				}
+				count = this.index;
+			}
+		}
+		oBtn.onclick = function(){
+			var oT = document.getElementById('text');
+			var oH = document.getElementById('href');
+			if(oT.value == '' || oH.value == ''){
+				alert('有东西没写');
+				return;
+			}else{
+				aA[count].innerHTML = oT.value;
+				aA[count].href = oH.value;
+				var oDiv = document.createElement('div');
+				oDiv.innerHTML = '×';
+				oDiv.className = 'close';
+				aLi[count].appendChild(oDiv);
+				oDiv.onclick = function(){
+					aA[count].innerHTML = '+';
+					aA[count].href = 'javascript:;'
+					aLi[count].removeChild(this);
+				}
+			}
+			oT.value = '';
+			oH.value = '';
+			oBox.style.display = 'none';
+		}
+	}
+</script>
+</head>
+
+<body>
+    <ul id="menu">
+		<li><a href="javascript:;">+</a></li>
+		<li><a href="javascript:;">+</a></li>
+		<li><a href="javascript:;">+</a></li>
+		<li><a href="javascript:;">+</a></li>
+	</ul>
+	<div id="box">
+		<div class="label">
+			<span>网站名称</span>
+			<input type="text" id="text" class="text">
+			<input type="button" value="添加" id="btn">
+		</div>
+		<div class="label">
+			<span>网站地址</span>
+			<input type="text" id="href" class="text">
+		</div>
+		<div class="close">×</div>
+	</div>
+</body>
+</html>

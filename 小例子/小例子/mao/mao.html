@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+   *{
+	  margin:0;
+	  padding:0;   
+    }
+	.box{
+         width:330px;
+		 height:330px;	
+		 border:1px solid red;
+		 margin:100px 300px;	
+		 position:relative;
+	}
+	.box div{
+              float:left;		
+	}
+	#div1{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:5px;
+		top:5px;
+	}
+	#div2{
+        width:100px;
+		height:100px;	
+		position:absolute;
+		left:110px;
+		top:5px;
+	}
+	#div3{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:215px;
+		top:5px;
+	}
+	#div4{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:5px;
+		top:110px;
+	}
+	#div5{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:110px;
+		top:110px;
+	}
+	#div6{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:215px;
+		top:110px;
+	}
+	#div7{
+        width:100px;
+		height:100px;	
+		position:absolute;
+		left:5px;
+		top:215px;
+	}
+	#div8{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:110px;
+		top:215px;
+	}
+	#div9{
+        width:100px;
+		height:100px;
+		position:absolute;
+		left:215px;
+		top:215px;
+	}
+	div img{
+            width:100%;
+			height:100%;		
+	}
+	
+</style>
+<script>
+    window.onload=function(){
+	    var oDiv1=document.getElementById('div1');	
+		var oDiv2=document.getElementById('div2');	
+		var oDiv3=document.getElementById('div3');	
+		var oDiv4=document.getElementById('div4');	
+		var oDiv5=document.getElementById('div5');	
+		var oDiv6=document.getElementById('div6');	
+		var oDiv7=document.getElementById('div7');	
+		var oDiv8=document.getElementById('div8');	
+		var oDiv9=document.getElementById('div9');	
+		oDiv1.onmouseover=function(){
+		    oDiv1.style.width = '200px';
+			oDiv1.style.height = '200px';
+			oDiv1.style.zIndex = '99';
+			oDiv1.style.left = '-50px';
+			oDiv1.style.top = '-50px';
+			
+		}
+		oDiv1.onmouseout=function(){
+			oDiv1.style.width = '100px';
+			oDiv1.style.height = '100px';
+			oDiv1.style.zIndex = '';
+			oDiv1.style.left = '5px';
+			oDiv1.style.top = '5px';
+		}
+		oDiv2.onmouseover=function(){
+		    oDiv2.style.width = '200px';
+			oDiv2.style.height = '200px';
+			oDiv2.style.zIndex = '99';
+			oDiv2.style.left = '60px';
+			oDiv2.style.top = '-50px';
+			
+		}
+		oDiv2.onmouseout=function(){
+			oDiv2.style.width = '100px';
+			oDiv2.style.height = '100px';
+			oDiv2.style.zIndex = '';
+			oDiv2.style.left = '110px';
+			oDiv2.style.top = '5px';
+		}
+		oDiv3.onmouseover=function(){
+		    oDiv3.style.width = '200px';
+			oDiv3.style.height = '200px';
+			oDiv3.style.zIndex = '99';
+			oDiv3.style.left = '165px';
+			oDiv3.style.top = '-50px';
+			
+		}
+		oDiv3.onmouseout=function(){
+			oDiv3.style.width = '100px';
+			oDiv3.style.height = '100px';
+			oDiv3.style.zIndex = '';
+			oDiv3.style.left = '215px';
+			oDiv3.style.top = '5px';
+		}
+		oDiv4.onmouseover=function(){
+		    oDiv4.style.width = '200px';
+			oDiv4.style.height = '200px';
+			oDiv4.style.zIndex = '99';
+			oDiv4.style.left = '-50px';
+			oDiv4.style.top = '50px';
+			
+		}
+		oDiv4.onmouseout=function(){
+			oDiv4.style.width = '100px';
+			oDiv4.style.height = '100px';
+			oDiv4.style.zIndex = '';
+			oDiv4.style.left = '5px';
+			oDiv4.style.top = '110px';
+		}
+		oDiv5.onmouseover=function(){
+		    oDiv5.style.width = '200px';
+			oDiv5.style.height = '200px';
+			oDiv5.style.zIndex = '99';
+			oDiv5.style.left = '50px';
+			oDiv5.style.top = '50px';
+			
+		}
+		oDiv5.onmouseout=function(){
+			oDiv5.style.width = '100px';
+			oDiv5.style.height = '100px';
+			oDiv5.style.zIndex = '';
+			oDiv5.style.left = '110px';
+			oDiv5.style.top = '110px';
+		}
+		oDiv6.onmouseover=function(){
+		    oDiv6.style.width = '200px';
+			oDiv6.style.height = '200px';
+			oDiv6.style.zIndex = '99';
+			oDiv6.style.left = '150px';
+			oDiv6.style.top = '50px';
+			
+		}
+		oDiv6.onmouseout=function(){
+			oDiv6.style.width = '100px';
+			oDiv6.style.height = '100px';
+			oDiv6.style.zIndex = '';
+			oDiv6.style.left = '215px';
+			oDiv6.style.top = '110px';
+		}
+		oDiv7.onmouseover=function(){
+		    oDiv7.style.width = '200px';
+			oDiv7.style.height = '200px';
+			oDiv7.style.zIndex = '99';
+			oDiv7.style.left = '-55px';
+			oDiv7.style.top = '165px';
+			
+		}
+		oDiv7.onmouseout=function(){
+			oDiv7.style.width = '100px';
+			oDiv7.style.height = '100px';
+			oDiv7.style.zIndex = '';
+			oDiv7.style.left = '5px';
+			oDiv7.style.top = '215px';
+		}
+		oDiv8.onmouseover=function(){
+		    oDiv8.style.width = '200px';
+			oDiv8.style.height = '200px';
+			oDiv8.style.zIndex = '99';
+			oDiv8.style.left = '55px';
+			oDiv8.style.top = '165px';
+			
+		}
+		oDiv8.onmouseout=function(){
+			oDiv8.style.width = '100px';
+			oDiv8.style.height = '100px';
+			oDiv8.style.zIndex = '';
+			oDiv8.style.left = '110px';
+			oDiv8.style.top = '215px';
+		}
+		oDiv9.onmouseover=function(){
+		    oDiv9.style.width = '200px';
+			oDiv9.style.height = '200px';
+			oDiv9.style.zIndex = '99';
+			oDiv9.style.left = '165px';
+			oDiv9.style.top = '165px';
+			
+		}
+		oDiv9.onmouseout=function(){
+			oDiv9.style.width = '100px';
+			oDiv9.style.height = '100px';
+			oDiv9.style.zIndex = '';
+			oDiv9.style.left = '215px';
+			oDiv9.style.top = '215px';
+		}
+	}
+</script>
+</head>
+<body>
+<div class="box">
+    <div id="div1">
+        <img src="psu.jpg">
+    </div>
+    <div id="div2">
+        <img src="psu.jpg">
+    </div>
+    <div id="div3">
+        <img src="psu.jpg">
+    </div>
+    <div id="div4">
+        <img src="psu.jpg">
+    </div>
+    <div id="div5">
+        <img src="psu.jpg">
+    </div>
+    <div id="div6">
+        <img src="psu.jpg">
+    </div>
+    <div id="div7">
+        <img src="psu.jpg">
+    </div>
+    <div id="div8">
+        <img src="psu.jpg">
+    </div>
+    <div id="div9">
+        <img src="psu.jpg">
+    </div>
+</div>
+</body>
+</html>

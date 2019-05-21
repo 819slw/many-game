@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#div1{
+		width: 600px;
+		height: 400px;
+		margin:50px auto;
+		border:1px solid #000;
+		overflow: hidden;
+		position: relative;
+		padding-right: 20px;
+	}
+	#text{
+		position: absolute;
+		width: 600px;
+		left: 0;
+		top: 0;
+	}
+	#bar{
+		width: 20px;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		background: #ccc;
+	}
+	#bar span{
+		width: 20px;
+		height: 140px;
+		background: orange;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+</style>
+<script src="wheel.js"></script>
+<script>
+	window.onload = function(){
+		var oDiv1 = document.getElementById('div1');
+		var oBar = document.getElementById('bar');
+		var oSpan = oBar.children[0];
+		var oT = document.getElementById('text');
+
+		oSpan.onmousedown = function(ev){
+			var oEvent = ev || event;
+			var disY = oEvent.clientY - oSpan.offsetTop;
+
+			document.onmousemove = function(ev){
+				var oEvent = ev || event;
+				var t = oEvent.clientY - disY;
+				setTop(t);
+			}
+
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+				oSpan.releaseCapture && oSpan.releaseCapture();
+			}
+			oSpan.setCapture && oSpan.setCapture();
+			return false;
+		}
+
+		function setTop(t){
+			if(t <= 0){
+				t = 0;
+			}
+			if(t >= oBar.offsetHeight - oSpan.offsetHeight){
+				t = oBar.offsetHeight - oSpan.offsetHeight;
+			}
+			oSpan.style.top = t + 'px';
+
+			var scale = oSpan.offsetTop/(oBar.offsetHeight-oSpan.offsetHeight);
+			oT.style.top = -scale*(oT.scrollHeight-oDiv1.offsetHeight)+'px';
+		}
+
+		addWheel(oDiv1,function(bDown){
+			var t = oSpan.offsetTop;
+			if(bDown){
+				t+=10;
+				setTop(t);
+			}else{
+				t-=10;
+				setTop(t);
+			}
+		});
+	}
+</script>
+</head>
+
+<body>
+	<div id="div1">
+		<div id="bar">
+			<span></span>
+		</div>
+		<div id="text">
+			习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。习近平指出，当今世界，医疗卫生同政治、经济、文化、社会等各领域发展的关系日益密切，对国际关系和外交政策影响不断上升。中国政府高度重视维护人民健康并在深化改革、健全全民医保制度、完善医疗卫生服务体系、建立基本药物制度、推进基本医疗和公共卫生服务均等化方面取得了重要进展。同时，中国仍然面临许多挑战。我们作出了推进健康中国建设的决策部署，正在抓紧制定健康发展中长期规划。使全体中国人民享有更高水平的医疗卫生服务也是我们两个百年目标的重要组成部分。
+		</div>
+	</div>
+</body>
+</html>

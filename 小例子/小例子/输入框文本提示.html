@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+         margin:0;
+         padding:0;  
+    }
+    #box{
+        width:200px;
+        height:30px;
+        border:2px solid #000;
+        position:relative;
+        top:30px ;
+        left:100px;      
+    }
+    #text{
+        width:197px;
+        height:30px;
+        padding-left:3px;
+        position:absolute;
+        top:0; left:0;  
+        border:none;   
+    }
+    #span1{
+        height:30px;
+        padding-left:3px;
+        position:absolute;
+        left:0; top:0;   
+        color:#ccc; 
+        line-height: 30px;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oT=document.getElementById('text');
+        var oSpan = document.getElementById('span1');
+        oT.onfocus=function(){
+            oSpan.style.display = 'none';
+        }
+        oT.onblur=function(){
+            if(oT.value==''){
+                oSpan.style.display = 'block';
+            }
+        }
+        oSpan.onclick=function(){
+            oT.focus();;
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" name="" value="" id="text">
+        <span id="span1">智能社</span>        
+    </div>
+</body>
+</html>

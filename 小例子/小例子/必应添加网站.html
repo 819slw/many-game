@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	body{
+		background: #333;
+	}
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#ul1{
+
+	}
+	#ul1 li{
+		width: 200px;
+		height: 110px;
+		background:#fff;
+		float: left;
+		margin:10px;
+		font-size: 40px;
+		line-height: 110px;
+		text-align: center;
+		cursor: pointer;
+		position: relative;
+	}
+	#ul1 li span{
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		line-height: 20px;
+		text-align: center;
+		font-size: 14px;
+		display: none;
+	}
+	#shaow{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #000;
+		opacity: 0.3;
+		display: none;
+	}
+	#box{
+		width: 480px;
+		height: 280px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -140px;
+		margin-left: -240px;
+		background: #fff;
+		display: none;
+	}
+	#close{
+		position: absolute;
+		right:0;
+		top: 0;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		text-align: center;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var oUl = document.getElementById('ul1');
+		var aLi = oUl.children;
+		var oShaow = document.getElementById('shaow');
+		var oBox = document.getElementById('box');
+		var oC = document.getElementById('close');
+		var oBtn = document.getElementById('btn');
+		var oN = document.getElementById('name');
+		var oH = document.getElementById('link');
+		var _this = null;
+		for(var i = 0; i < aLi.length; i++){
+			aLi[i].onclick = function(){
+				_this = this;
+				oShaow .style.display = 'block';
+				oBox.style.display = 'block';
+			}
+			aLi[i].onmouseover = function(){
+				var oSpan = this.getElementsByTagName('span');
+				if(oSpan.length > 0){
+					oSpan[0].style.display = 'block';
+				}
+			}
+			aLi[i].onmouseout = function(){
+				var oSpan = this.getElementsByTagName('span');
+				if(oSpan.length > 0){
+					oSpan[0].style.display = 'none';
+				}
+			}
+		}
+
+		oC.onclick = function(){
+			oShaow .style.display = 'none';
+			oBox.style.display = 'none';
+		}
+
+		oBtn.onclick = function(){
+			var name = oN.value;
+			var href = oH.value;
+
+			if(oN.value != '' && oH.value != ''){
+				var oA = document.createElement('a');
+				oA.innerHTML = name;
+				oA.href = href;
+				oA.onclick = function(ev){
+					var oEvent = ev || event;
+					oEvent.cancelBubble = true;
+				}
+
+				_this.innerHTML = '';
+				_this.appendChild(oA);
+
+				oShaow .style.display = 'none';
+				oBox.style.display = 'none';
+				oN.value = '';
+				oH.value = '';
+
+				var oSpan = document.createElement('span');
+				oSpan.innerHTML = '×';
+				_this.appendChild(oSpan);
+				oSpan.onclick = function(ev){
+					var oEvent = ev || event;
+					this.parentNode.innerHTML = '＋';
+					oEvent.cancelBubble = true;
+				}
+			}else{
+				alert('有没填的');
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<ul id="ul1">
+		<li>＋</li>
+		<li>＋</li>
+		<li>＋</li>
+		<li>＋</li>
+	</ul>
+
+	<div id="shaow"></div>
+	<div id="box">
+		<div class="line">
+			网站名称:<input type="text" id="name">
+		</div>
+		<div class="line">
+			网站链接:<input type="text" id="link">
+		</div>
+		<div class="line">
+			<input type="button" value="添加" id="btn">
+		</div>
+		<a href="javascript:;" id="close">×</a>
+	</div>
+</body>
+</html>

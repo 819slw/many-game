@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#div1{
+		width: 130px;
+		height: 26px;
+		background: url(star.gif) repeat-x;
+		margin:50px auto;
+		position: relative;
+	}
+	#div2{
+		width: 0px;
+		height: 26px;
+		background:url(star.gif) 0px -29px repeat-x;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	#div3{
+		position: absolute;
+		width: 130px;
+		height: 26px;
+		left: 0;
+		top: 0;
+	}
+	#div3 span{
+		width: 26px;
+		height: 26px;
+		float: left;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var aSpan = document.getElementsByTagName('span');
+		var oDiv2 = document.getElementById('div2');
+		for(var i = 0; i < aSpan.length; i++){
+			aSpan[i].index = i;
+			aSpan[i].onmouseover = function(){
+				oDiv2.style.width = (this.index+1)*26 + 'px';
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div id="div1">
+		<div id="div2"></div>
+		<div id="div3">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+</body>
+</html>

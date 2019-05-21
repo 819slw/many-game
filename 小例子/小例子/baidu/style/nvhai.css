@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+.weather span{color:#fff;}
+.menu a{color:#fff;}
+.bottom a{color: #fff;}
+
+/*默认皮肤隐藏*/
+.skin_opa,
+.skin_img{ background:url(../img/skin/nvhai.jpg) no-repeat center center;}
+.logo{ background:url(../img/logo_white.png) no-repeat;}
+.tab .active a{ color:#fff;}
+.tab li a{ color:#fff;}
+.bottom p{ color:#fff;}

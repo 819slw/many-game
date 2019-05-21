@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none; 
+        text-decoration: none; 
+    }
+    #box{
+        width:286px;
+        height:235px;
+        margin:50px auto;
+        border:1px solid red;  
+        overflow:hidden;
+    }
+    ul{
+        width:90px;
+        height:235px;
+        background:#211818;
+        float:left;  
+    }
+    ul li{
+        width:90px;
+        height:38px;
+        float:left;
+        color:#fff;
+        text-align: center;
+        line-height: 38px; 
+        border-bottom: 1px solid #fff;
+        cursor:pointer;
+    }
+    #div1{
+        width:195px;
+        height:235px;  
+        float:left;
+        position:relative;
+    }
+    #div1 img{
+        width:195px;
+        height:235px;
+        border:none;
+    }
+    .opa{
+        width:195px;
+        height:40px; 
+        background:#000;
+        opacity:0.3;
+        filter:alpha(opacity=30);
+        position:absolute;
+        left:0;
+        bottom:0;
+           
+    }
+    .text{
+        width:195px;
+        height:40px;
+        text-align: center;
+        line-height: 40px;
+        font-size:18px;
+        color:#fff;
+        position:absolute;
+        left:0;
+        bottom:0; 
+    }
+    .on{
+        background:red;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oUl=document.getElementById('ul1');
+        var oDiv=document.getElementById('div1');
+        var aLi=oUl.getElementsByTagName('li');
+        var oImg=oDiv.getElementsByTagName('img')[0];
+        var oT=document.getElementById('div2');
+        var arr = [
+                   '第一张图片',
+                   '第二张图片',
+                   '第三张图片',
+                   '第四张图片',
+                   '第五张图片', 
+                   '第六张图片' 
+        ];  
+        for(var i=0; i<aLi.length; i++){
+             aLi[i].index = i; 
+             aLi[i].onmouseover=function(){
+
+                for(var i=0; i<aLi.length; i++){
+                    aLi[i].className = '';
+
+                }
+                this.className = 'on';
+                oImg.src = 'img/img'+(this.index+1)+'.jpg';
+                oT.innerHTML = arr[this.index];
+             }
+        } 
+    }
+</script>
+</head>
+<body>
+<div id="box">
+    <ul id="ul1">
+        <li class="on">美妆星期一</li>
+        <li>星座星期二</li>
+        <li>护理星期三</li>
+        <li>护肤星期四</li>
+        <li>享乐星期五</li>
+        <li style="border:none;">动感周末</li>
+    </ul>
+    <div id="div1">
+        <img src="img/img1.jpg" />
+        <div class="opa"></div>
+        <div class="text" id="div2">第一张图片</div>
+    </div>
+</div>
+</body>
+</html>

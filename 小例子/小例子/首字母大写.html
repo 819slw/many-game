@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style></style>
+<script>
+	var str = 'welcome to bei jing';
+	// 1、提出来每一个单词
+	var arr = str.split(' ');
+	// 存新单词的数组
+	var arr2 = [];
+
+	//arr -> ['welcome','to','bei','jing']
+	// 循环数组，操作每一个单词的首字母
+	for(var i = 0; i < arr.length; i++){
+		// 首字母转大写
+		var s = arr[i].charAt(0).toUpperCase();
+		// 截取除了首字母的部分
+		var m = arr[i].substring(1);
+		// 重新拼接单词
+		var stmp = s+m;
+		arr2.push(stmp);
+	}
+	// 数组转字符串
+	var str2 = arr2.join(' ');
+	alert(str2);
+</script>
+</head>
+
+<body>
+</body>
+</html>

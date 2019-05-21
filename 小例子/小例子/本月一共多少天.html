@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+        //获取当前时间
+        var oDate = new Date();
+        //把时间设置到下一个月
+        oDate.setMonth(oDate.getMonth()+1);
+        //设置天为0 返回上一个月的最后一天
+        oDate.setDate(0);
+        //弹出最后一天   最后一天=本月一共多少天
+        alert(oDate.getDate());   
+    }
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="">
+<meta name="copyright" content="">
+<title></title>
+<style>
+	*{margin:0;padding:0; list-style:none;}
+	#ul1 li{width:200px;height:200px; background:aqua; overflow:hidden;  position:relative; float:left;margin:10px;}
+	#ul1 li span{width:200px;height:200px; background:red;  position:absolute; left:-200px; top:0; background:url(meizi.png); background-size:200px 200px;}
+</style>
+<script src="move.js"></script>
+<script>
+	function through(obj){
+		function a2d(n){
+			return n*180/Math.PI;
+		}
+		function d2a(n){
+			return n*Math.PI/180;
+		}
+		function hoverDir(obj,ev){
+			var x = obj.offsetLeft+obj.offsetWidth/2 -ev.clientX;
+			var y = obj.offsetTop+obj.offsetHeight/2 -ev.clientY;
+			return Math.round((a2d(Math.atan2(y,x))+180)/90)%4;
+		}
+		//进来
+		obj.onmouseover = function(ev){
+			var oS =obj.children[0];
+			var oEvent = ev||event;
+			var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+			if(obj.contains(oFrom)){
+				return;
+			}
+			//滑过方向
+			var dir = hoverDir(obj,oEvent);
+			switch(dir){
+				//右边0
+				case 0:
+				oS.style.left = '200px';
+				oS.style.top = '0px';
+				break;
+				//下边1
+				case 1:
+				oS.style.left = '0px';
+				oS.style.top = '200px';
+				break;
+				//左边2
+				case 2:
+				oS.style.left = '-200px';
+				oS.style.top = '0px';
+				break;
+				//上边3
+				case 3:
+				oS.style.left = '0';
+				oS.style.top = '-200px';
+				break;
+			}
+			move(oS,{left:0,top:0});
+		};
+		//出去
+		obj.onmouseout = function(ev){
+			var oS =obj.children[0];
+			var oEvent = ev||event;
+			var oTo = oEvent.toElement||oEvent.relatedTarget;
+			if(obj.contains(oTo)){return;}
+			var dir = hoverDir(obj,oEvent);
+			switch(dir){
+				case 0:
+				move(oS,{left:200,top:0});
+				break;
+				case 1:
+				move(oS,{left:0,top:200});
+				break;
+				case 2:
+				move(oS,{left:-200,top:0});
+				break;
+				case 3:
+				move(oS,{left:0,top:-200});
+				break;
+			}
+		};
+	}
+	
+	window.onload = function(){
+		var oUl = document.getElementById('ul1');
+		var aLi = oUl.children;
+		for(var i = 0;i<aLi.length;i++){
+			through(aLi[i]);
+		}	
+	};
+</script>
+</head>
+
+<body>
+	<div id="box">
+    	<ul id="ul1">
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        	<li><span></span></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

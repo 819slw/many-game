@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#con{
+		width: 400px;
+		height: 400px;
+		position: relative;
+	}
+	#box{
+		width: 400px;
+		height: 400px;
+	}
+	#box img{
+		width: 400px;
+		height: 400px;
+	}
+	#box span{
+		width: 200px;
+		height: 200px;
+		background: blue;
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity:0.3;
+		filter:alpha(opacity = 30);
+		cursor: move;
+		display: none;
+	}
+	#bigImg{
+		position: absolute;
+		left:410px;
+		top:0px;
+		width: 400px;
+		height: 400px;
+		overflow: hidden;
+		display: none;
+	}
+	#bigImg img{
+		position: absolute;
+		left:0;
+		top:0;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var oBox = document.getElementById('box');
+		var oMask = document.getElementById('mask');
+		var oBig = document.getElementById('bigImg');
+		var oImg = oBig.getElementsByTagName('img')[0];
+
+		oBox.onmouseover = function(){
+			oMask.style.display = 'block';
+			oBig.style.display = 'block';
+		}
+
+		oBox.onmouseout = function(ev){
+			var oEvent = ev || event;
+			var to = oEvent.toElement || oEvent.relatedTarget;
+			if(this.contains(to)) return;
+			oMask.style.display = 'none';
+			oBig.style.display = 'none';
+		}
+
+		oBox.onmousemove = function(ev){
+			var oEvent = ev || event;
+			// 获取鼠标的坐标
+			var x = oEvent.clientX - oMask.offsetWidth/2;
+			var y = oEvent.clientY - oMask.offsetHeight/2;
+
+			document.title = x+'||'+y;
+			// 判断范围
+			if(x <= 0){
+				x = 0;
+			}
+			if(x >= oBox.offsetWidth - oMask.offsetWidth){
+				x = oBox.offsetWidth - oMask.offsetWidth;
+			}
+			if(y <= 0){
+				y = 0;
+			}
+			if(y >= oBox.offsetHeight - oMask.offsetHeight){
+				y = oBox.offsetHeight - oMask.offsetHeight;
+			}
+
+			// 遮罩层跟着走
+			oMask.style.top = y + 'px';
+			oMask.style.left = x + 'px';
+
+			// 左活动范围 oBox.offsetWidth - oMask.offseWidth
+			// 右活动范围 oImg.offsetWidth - oBig.offsetWidth
+
+			// 左边
+			// oMask.offsetLeft/(oBox.offsetWidth - oMask.offseWidth)
+			// 右边
+			//?/(oImg.offsetWidth - oBig.offsetWidth)
+
+			/*
+				12/100 = ?/2000
+			*/
+			//? = oMask.offsetLeft*(oImg.offsetWidth - oBig.offsetWidth)/(oBox.offsetWidth - oMask.offseWidth)
+
+			// 大图移动
+			oImg.style.left = -oMask.offsetLeft*(oImg.offsetWidth - oBig.offsetWidth)/(oBox.offsetWidth - oMask.offsetWidth) + 'px';
+			oImg.style.top = -oMask.offsetTop*(oImg.offsetHeight - oBig.offsetHeight)/(oBox.offsetHeight - oMask.offsetHeight) + 'px';
+		}
+	}
+</script>
+</head>
+
+<body>
+<div id="con">
+	<div id="box">
+		<img src="img/meizi.png" alt="">
+		<span id="mask"></span>
+	</div>
+	<div id="bigImg">
+		<img src="img/meizi.png" alt="">
+	</div>
+</div>
+</body>
+</html>

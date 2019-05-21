@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+        var arr=[1,2,3,4,4,4,3,3,2,1,1,1,1];
+        function removeDup(arr){
+            var json={};
+            for(var i=0; i<arr.length; i++){
+                if(!json[arr[i]]){
+                    json[arr[i]]='zns';
+                }
+            }
+            var arr2=[];
+            for(var name in json){
+                arr2.push(name);
+            }
+            return arr2;
+        }
+        alert(removeDup(arr));
+    }
+</script>
+</head>
+<body>
+    
+</body>
+</html>

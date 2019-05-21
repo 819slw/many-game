@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{ margin: 0; padding: 0; }
+	li{ list-style: none; }
+	#box{ width: 601px; margin:10px auto; }
+	#box ul{ overflow: hidden; border:solid #ccc; border-width:1px 1px 0 0;}
+	#box li{ float: left; width:199px; height: 40px; text-align: center; line-height: 40px; border:solid #ccc; border-width: 0px 0px 1px 1px; font-size: 20px; cursor: pointer;}
+	#box li.on{ background:green; color:#fff;}
+	#box div{ border:solid #ccc; border-width: 0 1px 1px; height: 300px; font-size: 100px; text-align: center; line-height: 300px; display: none; }
+</style>
+<script>
+window.onload = function(){
+	// 如果完全不想让别人和你命名冲突 - 就给整个选项卡来一个封闭空间
+	(function(){
+		var oBox = document.getElementById('box');
+		var aLi = oBox.getElementsByTagName('li');
+		var aDiv = oBox.getElementsByTagName('div');
+		var iNow = 0;
+		var timer = null;
+		for(var i = 0; i < aLi.length; i++){
+			(function(index){
+				aLi[i].onclick = function(){
+					iNow = index;
+					tab();
+				}
+			})(i);
+		}
+
+		// 选项卡功能函数
+		function tab(){
+			for(var j = 0; j < aLi.length; j++){
+				aLi[j].className = '';
+				aDiv[j].style.display = 'none';
+			}
+			aLi[iNow].className = 'on';
+			aDiv[iNow].style.display = 'block';
+		}
+
+		// 往后跑函数
+		function next(){
+			iNow++;
+			if(iNow == aLi.length){
+				iNow = 0;
+			}
+			tab();
+		}
+
+		// 往前跑函数
+		function prev(){
+			iNow -- ;
+			if(iNow == -1){
+				iNow = aLi.length - 1;
+			}
+			tab();
+		}
+
+		//往后跑
+		timer = setInterval(next,1000);
+
+		// 往前跑
+		// timer = setInterval(prev,1000);
+
+		// 鼠标经过停止
+		oBox.onmouseover = function(){
+			clearInterval(timer);
+		}
+
+		// 鼠标离开继续走
+		oBox.onmouseout = function(){
+			timer = setInterval(next,1000);
+			// 往前跑
+			// timer = setInterval(prev,1000);
+		}
+	})();
+}
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<ul>
+			<li class="on">第一个</li>
+			<li>第二个</li>
+			<li>第三个</li>
+		</ul>
+		<div style="display:block;">第一个div</div>
+		<div>第二个div</div>
+		<div>第三个div</div>
+	</div>
+</body>
+</html>

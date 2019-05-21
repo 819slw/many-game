@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .box{
+        width: 130px;
+        margin:10px auto;
+        position: relative;
+    }
+    .box .star{
+        width: 100%;
+        height: 26px;
+        background: url(star.gif) repeat-x;
+        position: absolute;
+        left:0;
+        top:0;
+    }
+    .box .star_on{
+        width: 26px;
+        height: 26px;
+        left:0px;
+        top:0px;
+        background: url(star.gif) 0px -29px repeat-x;
+        position: absolute;
+    }
+    .box span{
+        width: 26px;
+        height: 26px;
+        float: left;
+        position: relative;
+        z-index: 1;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var aSpan = document.getElementsByTagName('span');
+        var oStarOn = document.getElementById('star_on');
+        for(var i = 0; i < aSpan.length; i++){
+            aSpan[i].index = i;
+            aSpan[i].onmouseover = function(){
+                var n = (this.index+1)*26;
+                oStarOn.style.width = n + 'px';
+            }
+            aSpan[i].onclick=function(){
+                alert(this.index+1); 
+            }
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="star"></div>
+        <div class="star_on" id="star_on"></div>
+    </div>
+</body>
+</html>

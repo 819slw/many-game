@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="zns_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="zns.js"></script>
+<script>
+    window.onload=function(){
+	    var oList1 = document.getElementById('list1');
+		var oList2 = document.getElementById('list2');
+		var aLil = oList1.getElementsByTagName('li');
+		var aLir = oList2.getElementsByTagName('li');
+		var aPl = oList1.getElementsByTagName('p');
+		var aPr = oList2.getElementsByTagName('p');
+        for(var i=0; i<aLil.length; i++){
+			aLil[i].index = i;
+	        aLil[i].onmouseover = function(){
+				aPl[this.index].style.display = 'block';
+			};
+			aLil[i].onmouseout = function(){
+				aPl[this.index].style.display = 'none';
+			};	
+		}
+		for(var i=0; i<aLir.length; i++){
+			aLir[i].index = i;
+			aLir[i].onmouseover = function(){
+				aPr[this.index].style.display = 'block';
+			};
+			aLir[i].onmouseout = function(){
+				aPr[this.index].style.display = 'none';
+			};
+		}
+	}
+</script>
+</head>
+
+<body>
+
+<div id="prompt" class="prompt">
+    <ul class="list1" id="list1">
+        <li>
+            <h2>产品</h2>
+            <a href="javascript:;">
+                 <p>
+                    NX5
+                    <br />
+                    三星NX平台相机14.6万像素的APS的- C的传感器工作结构紧凑，重量轻体
+                 </p>
+             </a>
+        </li>
+        <li>
+            <h2>经销商</h2>
+            <a href="javascript:;">
+                 <p>
+                     鼎好电子大厦A座9019室
+                     <br />
+                     联系电话：010-62607039 13501246332
+                 </p>
+            </a>
+        </li>
+        <li>
+            <h2>价格</h2>
+            <a href="javascript:;">
+                <p>
+                    NX5
+                    <br />
+                    参考价：890元
+                </p>
+            </a>
+        </li>
+    </ul>
+    <ul class="list2" id="list2">
+        <li>
+            <h2>产品</h2>
+            <a href="javascript:;">
+                <p>
+                    欧达D350
+                    <br />
+                    500万像素,最高可插值1200万像素 高清规格：1080p
+                </p>
+            </a>
+        </li>
+        <li>
+            <h2>经销商</h2>
+            <a href="javascript:;">
+                <p>
+                    鼎好电子大厦A座9019室
+                    <br />
+                    联系电话：010-62607039 13501246332
+                </p>
+            </a>
+        </li>
+        <li>
+            <h2>价格</h2>
+            <a href="javascript:;">
+                <p>
+                    NX5
+                    <br />
+                    参考价：1890元
+                </p>
+            </a>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>

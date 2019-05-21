@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;
+        list-style: none;  
+    }
+    .box{
+        width:800px;
+        height:500px;
+        margin:30px auto; 
+        position:relative;   
+    }
+    #div{
+        position:relative;
+        width:100%;
+        height:100%;   
+    }
+    #div1 img{
+        width:800px;
+        height:500px; 
+        border:none; 
+        display:none;
+    }
+    #div1 .mask{
+        width:100%;
+        height:150px;
+        background:#000;
+        position:absolute;
+        opacity:0.3;
+        filter:alpha(opacity=30);
+        bottom:0;
+        left:0;  
+    }
+    #div1 .text{
+        width:100%;
+        position:absolute;
+        left:0;
+        bottom:80px;
+        color:#fff;  
+        font-size:30px; 
+        display:none;
+        text-align: center;
+    }
+    #ul1{
+        position:absolute;
+        right:20px;
+        bottom:20px;  
+    }
+    #ul1 li{
+        width:30px;
+        height:30px;
+        margin:3px;
+        background:#fff;
+        text-align: center;
+        line-height: 30px;
+        font-size:22px; 
+        float:left;  
+        cursor:pointer;
+        border-radius: 50%;  
+    }
+    #prev,#next{
+        width:80px; 
+        height:50px;
+        background:red;
+        color:#fff;
+        line-height: 50px;
+        text-align: center;
+        font-size:30px;
+        position:absolute;
+        top:200px; 
+        text-decoration: none;
+        cursor:pointer;
+    }
+    #prev{
+        left:10px; 
+    }
+    #next{
+        right:10px;
+    }
+    #ul1 .on{
+        background:red;
+        color:#fff;
+    }
+</style>
+<script>
+    window.onload=function(){
+        var oBox = document.getElementById('box');
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var aImg = oBox.getElementsByTagName('img');
+        var aP = oBox.getElementsByTagName('p');
+        var aLi = oBox.getElementsByTagName('li');
+        var count = 0;
+        var timer;
+        //封装函数
+        function tab(){
+            for(var j=0; j<aLi.length; j++){
+                aLi[j].className = '';
+                aImg[j].style.display = 'none';
+                aP[j].style.display = 'none';
+            }
+            aLi[count].className = 'on';
+            aP[count].style.display = 'block';
+            aImg[count].style.display = 'block';
+        }
+        //给每一个li加事件 让count=this.index
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick=function(){
+                count = this.index;
+                tab(); 
+            }
+        }  
+        //左边按钮封装函数
+        function prev(){
+            count--; 
+            if(count <0){
+                count = aLi.length-1; 
+            }
+            tab(); 
+        }   
+        //给左边按钮加事件
+        oPrev.onclick=prev;
+        //封装右边按钮函数
+        function next(){
+            count++;
+            if(count == aLi.length){
+                count = 0; 
+            } 
+            tab(); 
+        }    
+        //给右边按钮加事件
+        oNext.onclick=next;
+        //开定时器  相当于一秒按右边按钮一次
+        timer = setInterval(next,1000);
+        //当鼠标移入大父级的时候清定时器 停止换图片
+        oBox.onmouseover=function(){
+            clearInterval(timer); 
+        } 
+        //当鼠标移出大父级再次开启定时器  图片再次循环播放
+        oBox.onmouseout=function(){
+            timer = setInterval(next,1000); 
+        }
+    }
+</script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div id="div1">
+            <a href="javascript:;" id="prev">←</a>
+            <img src="img/1.jpg" alt="" style="display:block;">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <a href="javascript:;"id="next">→</a>
+            <span class="mask"></span>
+            <p class="text" style="display:block;">1111</p>
+            <p class="text">2222</p>
+            <p class="text">3333</p>
+            <p class="text">4444</p>
+        </div>
+        <ul id="ul1">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>

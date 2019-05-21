@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<title></title>
+<link href="zns_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="zns.js">
+</script>
+<script>
+window.onload=function(){
+    var oBtn = document.getElementById('btn');
+    var oT = document.getElementById('text');
+    var oBox = document.getElementById('box');
+    var n = 1;
+
+    oBtn.onclick = function(){
+        //判断文本域是不是空的
+        if(oT.value == ''){
+            //如果是空的不能提交
+            alert('没有内容,不能提交');
+        }else{
+            // 创建
+            var oP = document.createElement('p');
+            //p里面放的内容
+            oP.innerHTML = n++ + '.'+ oT.value;
+            // 添加
+            //console.log(oBox.innerHTML);
+            //
+            if(oBox.innerHTML == '<em>这里会显示留言内容……</em>' || oBox.innerHTML == '<EM>这里会显示留言内容……</EM>'){
+                oBox.innerHTML = '';
+            }
+            //添加留言
+            oBox.appendChild(oP);
+            // 清空文本域
+            oT.value = '';
+        }
+        //当鼠标移入留言  添加的p标签
+        oP.onmouseover = function(){
+            //改变背景颜色
+            this.style.background = 'yellow';
+            // 创建
+            var oSpn = document.createElement('span');
+            //添加内容
+            oSpn.innerHTML = '是否删除'+this.innerHTML;
+            //设置字体颜色
+            oSpn.style.color = 'red';
+            //添加span
+            this.appendChild(oSpn);
+        }
+        //当鼠标移出留言 p标签的时候
+        oP.onmouseout = function(){
+            // 删除span  恢复背景颜色
+            this.style.background = '';
+            this.removeChild(this.getElementsByTagName('span')[0]);
+        }
+        //点击留言 p标签的时候
+        oP.onclick = function(){
+            //删除留言
+            oBox.removeChild(this);
+            //判断留言个数是否为0
+            if(oBox.children.length == 0){
+                //显示em
+                oBox.innerHTML = '<em>这里会显示留言内容……</em>';
+                //恢复n值
+                n = 1;
+            }
+        }
+    }
+}
+</script>
+</head>
+
+<body>
+
+<div id="parent">
+	<h4>留言内容：</h4>
+	<div id="box"><em>这里会显示留言内容……</em></div>
+	<textarea id="text"></textarea><br />
+	<input id="btn" type="button" onclick="fn()" value="发表留言" />
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    *{
+        margin:0;
+        padding:0;  
+    }
+    .btn{
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+    #text{
+        width:200px;
+        height:50px;
+        font-size:30px;
+        color:red;  
+    }
+</style>
+<script>
+    window.onload=function(){
+         var oBtn1 = document.getElementById('btn1');
+         var oBtn2 = document.getElementById('btn2'); 
+         var oT = document.getElementById('text');
+         
+         oBtn1.onclick=function(){
+            var n = parseInt(oT.value) ;
+            if(isNaN(oT.value)){
+                alert('请输入数字');
+            }else{
+                n--;
+                alert(n);
+                oT.value = n;
+            }
+         }
+         oBtn2.onclick=function(){
+            var n = parseInt(oT.value) ;
+            if(isNaN(oT.value)){
+                alert('请输入数字');
+            }else{
+                n++;
+                alert(n);
+                oT.value = n;
+            }  
+         }  
+    }
+</script>
+</head>
+<body>
+    <input type="button" name="" value="-" id="btn1" class="btn">
+    <input type="text" name="" value="0" id="text">
+    <input type="button" name="" value="+" id="btn2" class="btn">
+</body>
+</html>

@@ -1,0 +1,8 @@
+@charset "utf-8";
+.weather span{color:#666;}
+.menu a{color:#00c;}
+.bottom a{color: #00C;}
+
+/*默认皮肤隐藏*/
+.skin_opa,
+.skin_img{ display: none;}

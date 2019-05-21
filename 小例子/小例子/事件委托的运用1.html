@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	div{
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		font-size: 30px;
+	}
+</style>
+<script>
+	function rnd(n,m){
+		return parseInt(Math.random()*(m-n)+n);
+	}
+	window.onload = function(){
+		// 创建div
+		for(var i = 0; i < 50; i++){
+			var oDiv = document.createElement('div');
+			oDiv.style.left = rnd(50,700)+'px';
+			oDiv.style.top = rnd(50,400)+'px';
+			oDiv.style.background = 'rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			oDiv.innerHTML = i+1;
+
+			// 可拖拽的div
+			oDiv.setAttribute('drag',true);
+			document.body.appendChild(oDiv);
+		}
+
+		var z = 1;
+
+		// 事件委托
+		document.body.onmousedown = function(ev){
+			var oEvent = ev || event;
+			var target = oEvent.srcElement || oEvent.target;
+			
+			// 判断是否可拖拽
+			if(!target.getAttribute('drag')) return;
+			z++;
+			target.style.zIndex=z;
+			var disX = oEvent.clientX - target.offsetLeft;
+			var disY = oEvent.clientY - target.offsetTop;
+			document.onmousemove = function(ev){
+				var oEvent = ev || event;
+				var l = oEvent.clientX - disX;
+				var t = oEvent.clientY - disY;
+				target.style.left = l+'px';
+				target.style.top = t+'px';
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+				target.releaseCapture && target.releaseCapture();
+			}
+			target.setCapture && target.setCapture();
+			return false;
+		}
+	}
+</script>
+</head>
+
+<body>
+</body>
+</html>

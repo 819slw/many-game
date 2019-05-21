@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #ul1 li{
+            width: 24px;
+            height: 35px;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            float: left;
+            font-size: 25px;
+            line-height: 35px;
+        }
+        #ul1 li img{
+            position: absolute;
+            left: 0;
+            top:0;
+
+        }
+    </style>
+    <script>
+        function toDouble(n){
+            return n<10?'0'+n:''+n;
+        }
+        window.onload = function () {
+            var aImg=document.getElementsByTagName('img');
+
+            var oDate=new Date();
+            var h=oDate.getHours();
+            var m=oDate.getMinutes();
+            var s=oDate.getSeconds();
+
+            var str=toDouble(h)+toDouble(h)+toDouble(s);
+
+            for(var i=0; i<aImg.length; i++){
+                aImg[i].style.top=-35*str.charAt(i)+'px';
+            }
+        };
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li><img src="num.png" alt=""></li>
+    <li><img src="num.png" alt=""></li>
+    <li>:</li>
+    <li><img src="num.png" alt=""></li>
+    <li><img src="num.png" alt=""></li>
+    <li>:</li>
+    <li><img src="num.png" alt=""></li>
+    <li><img src="num.png" alt=""></li>
+</ul>
+</body>
+</html>

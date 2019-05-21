@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+            //定义show函数
+            function show(a){
+                //返回json
+                return {
+                    //定义plus函数 有调用函数就有定义函数
+                    plus:function(b){
+                        //返回json
+                         return {
+                            //定义minus函数
+                            minus:function(c){
+                                //返回结果
+                                return a+b-c;
+                            }
+                         }   
+                    }
+                }
+            }
+            alert(show(2).plus(3).minus(4)); 
+    }
+
+    //1
+   //add(2)(3)(4);
+        
+</script>
+</head>
+<body>
+    
+</body>
+</html>

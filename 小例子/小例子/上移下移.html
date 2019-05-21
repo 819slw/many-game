@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+    window.onload=function(){
+        var oUl = document.getElementById('ul1');
+        var aA = document.getElementsByTagName('a');
+        //循环aA
+        for(var i=0; i<aA.length; i++){
+            if(i%2){
+                aA[i].onclick=function(){
+                    var obj = this.parentNode;
+                    if(obj == oUl.children[oUl.children.length-1]){
+                        alert('到底了');
+                        return; 
+                    }
+                    var next = obj.nextElementSibling || obj.nextSibling;
+                    next = next.nextElementSibimg||next.nextSibling;
+                    oUl.insertBefore(obj,next);  
+                }
+            }else{
+                aA[i].onclick=function(){
+                    var obj = this.parentNode;
+                    if(obj == oUl.children[0]){
+                        alert('到顶了');
+                        return; 
+                    } 
+                    var prev = obj.previousSibling || obj.previousSibling;
+                    oUl.insertBefore(obj,prev); 
+                }
+            }
+        }  
+    }
+</script>
+</head>
+<body>
+    <ul id="ul1">
+     <li><a href="javascript:;">上移</a>111<a href="javascript:;">下移</a></li>
+     <li><a href="javascript:;">上移</a>222<a href="javascript:;">下移</a></li>
+     <li><a href="javascript:;">上移</a>333<a href="javascript:;">下移</a></li>
+     <li><a href="javascript:;">上移</a>444<a href="javascript:;">下移</a></li>
+     <li><a href="javascript:;">上移</a>555<a href="javascript:;">下移</a></li>
+     <li><a href="javascript:;">上移</a>666<a href="javascript:;">下移</a></li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="" />
+<meta name="copyright" content="" />
+<meta name="description" content="" />
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#box{
+		width: 360px;
+		height: 220px;
+		border:1px solid #ccc;
+		margin:50px auto;
+		position: relative;
+	}
+	#box span{
+		position: absolute;
+		right:0;
+		top:0;
+		background: #ccc;
+		color:#000;
+		width: 100px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+	}
+	#box p{
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		border-top: 1px solid #ccc;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var oBox = document.getElementById('box');
+		var oSpan = oBox.getElementsByTagName('span')[0];
+		var oP = oBox.getElementsByTagName('p')[0];
+		var timer = null;
+		var timer1 = null;
+
+		// 即将拍卖的时间
+		var n = 5;
+
+		// 开始拍卖的时间
+		var a = 3;
+
+		function jijiang(){
+			n--;
+			// 初始化时间显示
+			var m = parseInt(n/60);
+			var s = n%60;
+			oP.innerHTML = m+'分'+s+'秒';
+
+			// 开始拍卖的时候
+			if(n == 0){
+				clearInterval(timer);
+				oSpan.innerHTML = '正在拍卖';
+				oSpan.style.background = 'orange';
+				oSpan.style.color = 'white';
+				var pm = parseInt(a/60);
+				var ps = a%60;
+				oP.innerHTML = pm+'分'+ps+'秒';
+
+				timer1 = setInterval(function(){
+					// 设置拍卖时间
+					a--;
+					var pm = parseInt(a/60);
+					var ps = a%60;
+					oP.innerHTML = pm+'分'+ps+'秒';
+
+					if(a <= 0){
+						clearInterval(timer1);
+						oSpan.innerHTML = '拍卖结束';
+						oSpan.style.background = '#ccc';
+						oSpan.style.color = '#000';
+					}
+					
+				},1000)
+			}
+		}
+		jijiang();
+		timer = setInterval(jijiang,1000)
+
+	}
+</script>
+</head>
+
+<body>
+	<div id="box">
+		<span>即将拍卖</span>
+		<p></p>
+	</div>
+</body>
+</html>
